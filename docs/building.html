@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Building &mdash; TInF Tool 0.2 documentation</title>
+  <title>1. Building TInF &mdash; TInF Tool 0.2 documentation</title>
   
 
   
@@ -102,8 +102,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Manual</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Building</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing-qt-and-openfoam">1.1. Installing Qt and OpenFOAM</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Building TInF</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-external-software">1.1. Install External Software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#building-the-ui-from-source">1.2. Building the UI from Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#compiling-the-source-code-in-openfoam">1.3. Compiling the Source Code in OpenFOAM</a></li>
 </ul>
@@ -155,7 +155,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li><span class="section-number">1. </span>Building</li>
+      <li><span class="section-number">1. </span>Building TInF</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -174,16 +174,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="building">
-<span id="sec-tinf-installation"></span><h1><span class="section-number">1. </span>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="installing-qt-and-openfoam">
-<h2><span class="section-number">1.1. </span>Installing Qt and OpenFOAM<a class="headerlink" href="#installing-qt-and-openfoam" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="building-tinf">
+<span id="sec-tinf-installation"></span><h1><span class="section-number">1. </span>Building TInF<a class="headerlink" href="#building-tinf" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-external-software">
+<h2><span class="section-number">1.1. </span>Install External Software<a class="headerlink" href="#install-external-software" title="Permalink to this headline">¶</a></h2>
 <p>Please note that in order to install and run the Turbulent Inflow Tool, your system must have installations of the following components:</p>
-<ul class="simple">
-<li><p>Qt</p></li>
-<li><p>OpenFOAM (v6 or v7 released by the OpenFOAM Foundation)</p></li>
-</ul>
-<p>The installations of these two components can be found through the links <a class="reference external" href="https://www.qt.io/download">https://www.qt.io/download</a> and <a class="reference external" href="https://openfoam.org/download/">https://openfoam.org/download/</a>, respectively.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Install a modern C++ compiler that is compliant with modern C++ standards (preferably C++17).</p></li>
+<li><p>Install the <a class="reference external" href="https://www.qt.io/download/">Qt framework</a>. Qt is free for open source developers. Qt version 5.10 or later is required and version 5.12 or later is recommended.</p></li>
+<li><p>Install OpenFOAM (v6 or v7) from the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a>)</p></li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first open source release of <code class="docutils literal notranslate"><span class="pre">OpenFOAM</span></code> was in 2004. It was based on the <code class="docutils literal notranslate"><span class="pre">FOAM</span></code> code, which was originally developed by Henry Weller in 1989. As sometimes happens with open source software when commercial interests get involved, the code forked over time and a number of open source distributions from different entities are available. The two main distributions of the code come from the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a> and from <a class="reference external" href="https://openfoam.com">ESI OpenFOAM</a>. Currently Turbulence Inflow Tool compiles and runs with versions <strong>6</strong> and <strong>7</strong> of the code released by the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a>.</p>
+</div>
 </div>
 <div class="section" id="building-the-ui-from-source">
 <h2><span class="section-number">1.2. </span>Building the UI from Source<a class="headerlink" href="#building-the-ui-from-source" title="Permalink to this headline">¶</a></h2>
