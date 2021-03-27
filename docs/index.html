@@ -1,40 +1,42 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Turbulence Inflow Tool &mdash; TInF Tool 0.2 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -76,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -109,6 +112,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -143,18 +147,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
       <li>Turbulence Inflow Tool</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -169,8 +175,8 @@
            <div itemprop="articleBody">
             
   <div class="section" id="turbulence-inflow-tool">
-<h1>Turbulence Inflow Tool<a class="headerlink" href="#turbulence-inflow-tool" title="Permalink to this headline">¶</a></h1>
-<p><strong>Jiawei Wan</strong> <a class="footnote-reference brackets" href="#id3" id="id1">1</a>, <strong>Peter Mackenzie-Helnwein</strong> <a class="footnote-reference brackets" href="#id4" id="id2">2</a></p>
+<span id="id1"></span><h1>Turbulence Inflow Tool<a class="headerlink" href="#turbulence-inflow-tool" title="Permalink to this headline">¶</a></h1>
+<p><strong>Jiawei Wan</strong> <a class="footnote-reference brackets" href="#id4" id="id2">1</a>, <strong>Peter Mackenzie-Helnwein</strong> <a class="footnote-reference brackets" href="#id5" id="id3">2</a></p>
 <p>The Turbulence Inflow Tool (TInF) is designed to collect all required properties and parameters
 needed for various turbulence inflow models in OpenFOAM, and to augment an existing wind-around-a-building model by adding the necessary sections to respective parameter definition files.</p>
 <p>The generic workflow involved is as follows.</p>
@@ -200,7 +206,6 @@ Consult Chapter <a class="reference internal" href="userManual.html#sec-tinf-usa
 <li class="toctree-l1"><a class="reference internal" href="copyright.html">8. Copyright and License</a></li>
 </ul>
 </div>
-<p>#   common/user_manual/requirements/requirements</p>
 <div class="toctree-wrapper compound" id="lbltechnicalmanual">
 <p class="caption"><span class="caption-text">Technical Manual</span><a class="headerlink" href="#lbltechnicalmanual" title="Permalink to this toctree">¶</a></p>
 <ul>
@@ -208,8 +213,8 @@ Consult Chapter <a class="reference internal" href="userManual.html#sec-tinf-usa
 <li class="toctree-l1"><a class="reference internal" href="theory/turbulent_inflow.html#code-implementation">2. Code Implementation</a></li>
 </ul>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<div class="toctree-wrapper compound" id="lbldevelopermanual">
+<p class="caption"><span class="caption-text">Developer Manual</span><a class="headerlink" href="#lbldevelopermanual" title="Permalink to this toctree">¶</a></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="building.html">1. Building TInF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validation/TinFverification.html">2. Verification of the Turbulence Inflow</a></li>
@@ -220,10 +225,10 @@ Consult Chapter <a class="reference internal" href="userManual.html#sec-tinf-usa
 <h2>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
 <p>Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna AT berkeley.edu</p>
 <dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>University of Notre Dame</p>
 </dd>
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
 <dd><p>University of Washington</p>
 </dd>
 </dl>
@@ -235,20 +240,25 @@ Consult Chapter <a class="reference internal" href="userManual.html#sec-tinf-usa
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; <a href="copyright.html">Copyright</a> SimCenter, University of California at Berkeley
+        &#169; <a href="copyright.html">Copyright</a> SimCenter, University of California at Berkeley.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -256,7 +266,6 @@ Consult Chapter <a class="reference internal" href="userManual.html#sec-tinf-usa
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -275,6 +284,7 @@ Consult Chapter <a class="reference internal" href="userManual.html#sec-tinf-usa
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-158130480-6', 'auto');
+    
     ga('send', 'pageview');
     </script>
 

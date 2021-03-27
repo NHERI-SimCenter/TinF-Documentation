@@ -1,40 +1,43 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>1. Theory &mdash; TInF Tool 0.2 documentation</title>
   
 
   
-  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -77,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -145,6 +149,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -179,18 +184,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li><span class="section-number">1. </span>Theory</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/theory/turbulent_inflow.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -232,11 +239,11 @@
 <h2><span class="section-number">1.2. </span>Synthetic Random Fourier Method<a class="headerlink" href="#synthetic-random-fourier-method" title="Permalink to this headline">¶</a></h2>
 <p>The so-called synthetic random Fourier method (SRFM) attempts to model turbulent flow field indirectly by imposing constraints on uncorrelated random fields through an energy spectrum to account for the spatial and temporal correlations, which can be further classified into two groups.
 The first group of the SRFM was based on the pioneering work in <a class="bibtex reference internal" href="#hoshiya1972" id="id6">[7]</a> and <a class="bibtex reference internal" href="#shinozuka1972" id="id7">[9]</a> on the simulation of multi-correlated random processes using a weighted amplitude wave superposition (WAWS) method. This approach has an advantage that both the targeted power- and cross-spectra can be imposed in the generation process so that the prescribed target characteristics can be maintained. A major drawback of this method is that the generated turbulence does not satisfy the continuity equation of the flow, or in other words, the divergence-free condition is not guaranteed. As a consequence it would take enormous effort for the solver to enforce the continuity by correcting the turbulence inflow inserted into the computational domain, and the statistical characteristics of the corrected flow field differs from the target values.</p>
-<p>The second group of the SRFM was initiated by the work in <a class="bibtex reference internal" href="#kraichnan1970" id="id8">[6]</a> on divergence-free homogeneous isotropic turbulence synthesis through the superposition of random harmonic functions. <a class="bibtex reference internal" href="#smirnov2001" id="id9">[10]</a> took a step forward by combing Kraichnan’s technique with scaling and orthogonal transformation operations in a procedure known as the random flow generation (RFG) which allows to generate inhomogeneous and anisotropic turbulence. However the scaling operation introduced in the RFG technique can result in a velocity field that is not divergence-free for inhomogeneous turbulence. Modifications to enforce the divergence-free constraint for inhomogeneous turbulence was discussed in <a class="bibtex reference internal" href="#yu2014" id="id10">[11]</a>. A major drawback of RFG technique is that the power-spectra of the generated turbulence only follows Gaussian’s spectra model, so it is not suitable for simulating flows in atmospheric boundary layer. <a class="bibtex reference internal" href="#huang2010" id="id11">[12]</a> revisited Kraichnan’s method and proposed a technique called DSRFG (for discretizing and synthesizing random flow generation) which allows to generate turbulent inflow from any prescribed spectrum. Instead of using the scaling and orthogonal transformation, the anisotropy of turbulence is realized by modifying the distribution strategy of the wave vector in Kraichnan’s original method. A drawback of the DSRFG technique is that it produces fluctuating velocities with high correlation due to the fact that in this method the spatial correlation is modelled by a parameter which is not a function of frequency but a constant value. Inspired by the DSRFG method, <a class="bibtex reference internal" href="#castro2017" id="id12">[13]</a> proposed some modifications to this technique to obtain the velocity field that had a better match with the target turbulent statistics. This method, known as modified discretizing and synthesizing random flow generation (MDSRFG), is capable of removing the dependence of statistic quantities of synthetic turbulence on spectra discretization resolution. <a class="bibtex reference internal" href="#aboshosha2015" id="id13">[14]</a> also proposed a technique called consistent discrete RFG (CDRFG) to accurately model the target spectra and the coherence function. In both two methods mentioned above, the parameter that characterizes the spatial correlation is expressed as a function of frequency to account for the damping of coherence with the increase of frequency. An attractive feature of second group of SRFM is that the generation procedures are usually independent at each point and each time-instant so that it can be easily accelerated by conducting parallel computation, although the generated random flow may not satisfy the continuity equation.</p>
+<p>The second group of the SRFM was initiated by the work in <a class="bibtex reference internal" href="#kraichnan1970" id="id8">[6]</a> on divergence-free homogeneous isotropic turbulence synthesis through the superposition of random harmonic functions. <a class="bibtex reference internal" href="#smirnov2001" id="id9">[10]</a> took a step forward by combing Kraichnan’s technique with scaling and orthogonal transformation operations in a procedure known as the random flow generation (RFG) which allows to generate inhomogeneous and anisotropic turbulence. However the scaling operation introduced in the RFG technique can result in a velocity field that is not divergence-free for inhomogeneous turbulence. Modifications to enforce the divergence-free constraint for inhomogeneous turbulence was discussed in <a class="bibtex reference internal" href="#yu2014" id="id10">[11]</a>. A major drawback of RFG technique is that the power-spectra of the generated turbulence only follows Gaussian’s spectra model, so it is not suitable for simulating flows in atmospheric boundary layer. <a class="bibtex reference internal" href="#huang2010" id="id11">[12]</a> revisited Kraichnan’s method and proposed a technique called DSRFG (for discretizing and synthesizing random flow generation) which allows to generate turbulence from any prescribed spectrum. Instead of using the scaling and orthogonal transformation, the anisotropy of turbulence is realized by modifying the distribution strategy of the wave vector in Kraichnan’s original method. A drawback of the DSRFG technique is that it produces fluctuating velocities with high correlation due to the fact that in this method the spatial correlation is modelled by a parameter which is not a function of frequency but a constant value. Inspired by the DSRFG method, <a class="bibtex reference internal" href="#castro2017" id="id12">[13]</a> proposed some modifications to this technique to obtain the velocity field that had a better match with the target turbulent statistics. This method, known as modified discretizing and synthesizing random flow generation (MDSRFG), is capable of removing the dependence of statistic quantities of synthetic turbulence on spectra discretization resolution. <a class="bibtex reference internal" href="#aboshosha2015" id="id13">[14]</a> also proposed a technique called consistent discrete RFG (CDRFG) to accurately model the target spectra and the coherence function. In both two methods mentioned above, the parameter that characterizes the spatial correlation is expressed as a function of frequency to account for the damping of coherence with the increase of frequency. An attractive feature of second group of SRFM is that the generation procedures are usually independent at each point and each time-instant so that it can be easily accelerated by conducting parallel computation, although the generated random flow may not satisfy the continuity equation.</p>
 </div>
 <div class="section" id="digital-filtering-method">
 <span id="sectiondfm"></span><h2><span class="section-number">1.3. </span>Digital Filtering Method<a class="headerlink" href="#digital-filtering-method" title="Permalink to this headline">¶</a></h2>
-<p>The digital filtering method (DFM) initiated by <a class="bibtex reference internal" href="#klein2003" id="id14">[8]</a> attempts to model the spatial and temporal coherence of turbulent inflow through the digital filtering uncorrelated random data, and account for inhomogeneity and anisotropy using the method proposed by <a class="bibtex reference internal" href="#lund1998" id="id15">[15]</a>. It is relatively easy to implement and is able to reproduce the first and second order one-point statistics as well as auto-correlation function. However, the synthetic turbulence generated by DFM does not satisfy the continuity equation. <a class="bibtex reference internal" href="#kim2013" id="id16">[16]</a> offered a promising approach to enforce the divergence-free constraint in the DFM by inserting the synthetic turbulence on a transverse plane near the inlet and relying on pressure-velocity coupling to do the correction. From a computational wind engineering point of view, the ability of DFM to impose a two-point spatial correlation directly is very attractive.</p>
+<p>The digital filtering method (DFM) initiated by <a class="bibtex reference internal" href="#klein2003" id="id14">[8]</a> attempts to model the spatial and temporal coherence of inflow turbulence through the digital filtering uncorrelated random data, and account for inhomogeneity and anisotropy using the method proposed by <a class="bibtex reference internal" href="#lund1998" id="id15">[15]</a>. It is relatively easy to implement and is able to reproduce the first and second order one-point statistics as well as auto-correlation function. However, the synthetic turbulence generated by DFM does not satisfy the continuity equation. <a class="bibtex reference internal" href="#kim2013" id="id16">[16]</a> offered a promising approach to enforce the divergence-free constraint in the DFM by inserting the synthetic turbulence on a transverse plane near the inlet and relying on pressure-velocity coupling to do the correction. From a computational wind engineering point of view, the ability of DFM to impose a two-point spatial correlation directly is very attractive.</p>
 <p>A brief introduction on the filtering method by <a class="bibtex reference internal" href="#klein2003" id="id17">[8]</a> is stated as follows. In order to create two-point correlations, let <span class="math notranslate nohighlight">\(r_m\)</span> be a series of random data with zero mean and unity variance, then</p>
 <div class="math notranslate nohighlight" id="equation-theory-turbulent-inflow-3">
 <span class="eqno">(1.4)<a class="headerlink" href="#equation-theory-turbulent-inflow-3" title="Permalink to this equation">¶</a></span>\[u_m = \sum_{n=-N}^N b_n r_{m+n}\]</div>
@@ -283,9 +290,9 @@ The first group of the SRFM was based on the pioneering work in <a class="bibtex
 <p>where the coefficients <span class="math notranslate nohighlight">\(a_{ij}\)</span> are given by <a class="reference internal" href="#equation-lundcoefficients">(1.23)</a>. This step ensures the synthetic velocity reproduces the target mean velocity and Reynolds stress tensor.</p>
 <ol class="loweralpha simple" start="6">
 <li><p>Discard the first <span class="math notranslate nohighlight">\((x_2,x_3)\)</span>-plane of <span class="math notranslate nohighlight">\(\Psi_{\alpha}\)</span> and shift the whole data: <span class="math notranslate nohighlight">\(\Psi_{\alpha}(i,j,k) = R_{\alpha}(i+1,j,k)\)</span>. Fill the plane <span class="math notranslate nohighlight">\(R_{\alpha}(N_1,j,k)\)</span> with new random numbers.</p></li>
-<li><p>Repeat the steps (d):math:<a href="#id19"><span class="problematic" id="id20">`</span></a>sim`(g) for each time step.</p></li>
+<li><p>Repeat the steps (d):math:<cite>sim</cite> (g) for each time step.</p></li>
 </ol>
-<p>If the target correlation function is an exponential function, an alternative approach by <a class="bibtex reference internal" href="#xie2008" id="id21">[1]</a> can be adopted for generating inflow turbulence which turns out to be much more efficient than the method of <a class="bibtex reference internal" href="#klein2003" id="id22">[8]</a>. Instead of using the filtering operation discussed above, the method of <a class="bibtex reference internal" href="#xie2008" id="id23">[1]</a> obtain the temporal correlation with the expression</p>
+<p>If the target correlation function is an exponential function, an alternative approach by <a class="bibtex reference internal" href="#xie2008" id="id19">[1]</a> can be adopted for generating inflow turbulence which turns out to be much more efficient than the method of <a class="bibtex reference internal" href="#klein2003" id="id20">[8]</a>. Instead of using the filtering operation discussed above, the method of <a class="bibtex reference internal" href="#xie2008" id="id21">[1]</a> obtain the temporal correlation with the expression</p>
 <div class="math notranslate nohighlight" id="equation-temporalcorrelation">
 <span class="eqno">(1.15)<a class="headerlink" href="#equation-temporalcorrelation" title="Permalink to this equation">¶</a></span>\[\Psi_{\alpha}(t+\Delta t,j,k) = \Psi_{\alpha}(t,j,k)\mathrm{exp}\left(-\frac{\pi \Delta t}{2T} \right)+\varPsi_{\alpha}(t,j,k)\left[1-\mathrm{exp}\left(-\frac{\pi \Delta t}{T} \right)\right]^{0.5}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Psi_{\alpha}(t,j,k)\)</span> and <span class="math notranslate nohighlight">\(\varPsi_{\alpha}(t,j,k)\)</span> are two set of spatially-correlated random data resulting from a two dimensional filtering operation. For simplicity, we write <span class="math notranslate nohighlight">\(\Psi_{\alpha,0}\)</span>, <span class="math notranslate nohighlight">\(\Psi_{\alpha,k}\)</span>, <span class="math notranslate nohighlight">\(\varPsi_{\alpha,0}\)</span> and <span class="math notranslate nohighlight">\(\varPsi_{\alpha,k}\)</span> for <span class="math notranslate nohighlight">\(\Psi_{\alpha}(t,j,k)\)</span>, <span class="math notranslate nohighlight">\(\Psi_{\alpha}(t+k\Delta t,j,k)\)</span>, <span class="math notranslate nohighlight">\(\varPsi_{\alpha}(t,j,k)\)</span> and <span class="math notranslate nohighlight">\(\varPsi_{\alpha}(t+k\Delta t,j,k)\)</span>, respectively. One easily verifies that</p>
@@ -296,7 +303,7 @@ The first group of the SRFM was based on the pioneering work in <a class="bibtex
 &amp; \cdots \\
 &amp; = \mathrm{exp}\left(-\frac{k\pi \Delta t}{2T}\right)
 \end{split}\end{split}\]</div>
-<p>which reproduces an exponential function. An overall algorithm for generating the inflow velocity supported by the method of <a class="bibtex reference internal" href="#xie2008" id="id24">[1]</a> can be stated as follows</p>
+<p>which reproduces an exponential function. An overall algorithm for generating the inflow velocity supported by the method of <a class="bibtex reference internal" href="#xie2008" id="id22">[1]</a> can be stated as follows</p>
 <ol class="loweralpha simple">
 <li><p>Choose for each coordinate direction corresponding to the inflow plane a length scale <span class="math notranslate nohighlight">\(L_{22} = n_2\Delta x_2\)</span>, <span class="math notranslate nohighlight">\(L_{33} = n_3\Delta x_3\)</span>, a time scale <span class="math notranslate nohighlight">\(T\)</span> and determine the filter width <span class="math notranslate nohighlight">\(N_{\alpha}\)</span> (<span class="math notranslate nohighlight">\(\alpha =1,2,3\)</span>) accordingly.</p></li>
 <li><p>Initialize and store three random fields <span class="math notranslate nohighlight">\(R_{\alpha}\)</span> (again <span class="math notranslate nohighlight">\(\alpha =1,2,3\)</span>) of dimensions <span class="math notranslate nohighlight">\([-N_2+1:M_2+N_2,-N_3+1:M_3+N_3]\)</span> where <span class="math notranslate nohighlight">\(M_2 \times M_3\)</span> denotes the dimensions of computational gird in the inflow plane.</p></li>
@@ -318,8 +325,8 @@ The first group of the SRFM was based on the pioneering work in <a class="bibtex
 </div>
 <div class="section" id="synthetic-eddy-method">
 <span id="sectionsem"></span><h2><span class="section-number">1.4. </span>Synthetic Eddy Method<a class="headerlink" href="#synthetic-eddy-method" title="Permalink to this headline">¶</a></h2>
-<p>The synthetic eddy method (SEM) initiated by <a class="bibtex reference internal" href="#jarrin2006" id="id25">[2]</a> is based on the classical view of turbulence as a superposition of the representative coherent eddies. In the SEM, the flow is assumed to consist of randomly distributed turbulent spots, and each turbulent spot is modelled by a three-dimensional shape function with compact support and satisfies a proper normalization condition. The spots are then assumed to be convected through an inlet plane with a reference velocity using Taylor’s frozen turbulence hypothesis. The resulting inflow turbulence is then reconstructed using the method proposed by to recover the desired statistical characteristics and to account for the conditions of inhomogeneity and anisotropy. The choice of the shape function plays an important role in the SEM since it is directly related to the two-point auto-correlation function, and consequently the power spectrum of the synthetic turbulence. Enforcement of the continuity condition in the SEM was discussed in <a class="bibtex reference internal" href="#poletto2013" id="id26">[3]</a> which will be introduced later.</p>
-<p>A brief introduction on the SEM presented by <a class="bibtex reference internal" href="#jarrin2006" id="id27">[2]</a> is given as follows. To start with, the turbulent spot mentioned above can be represented as eddies defined by shape function <span class="math notranslate nohighlight">\(f\)</span> which has a compact support on <span class="math notranslate nohighlight">\([-1,1]\)</span> and has the normalization</p>
+<p>The synthetic eddy method (SEM) initiated by <a class="bibtex reference internal" href="#jarrin2006" id="id23">[2]</a> is based on the classical view of turbulence as a superposition of the representative coherent eddies. In the SEM, the flow is assumed to consist of randomly distributed turbulent spots, and each turbulent spot is modelled by a three-dimensional shape function with compact support and satisfies a proper normalization condition. The spots are then assumed to be convected through an inlet plane with a reference velocity using Taylor’s frozen turbulence hypothesis. The resulting inflow turbulence is then reconstructed using the method proposed by to recover the desired statistical characteristics and to account for the conditions of inhomogeneity and anisotropy. The choice of the shape function plays an important role in the SEM since it is directly related to the two-point auto-correlation function, and consequently the power spectrum of the synthetic turbulence. Enforcement of the continuity condition in the SEM was discussed in <a class="bibtex reference internal" href="#poletto2013" id="id24">[3]</a> which will be introduced later.</p>
+<p>A brief introduction on the SEM presented by <a class="bibtex reference internal" href="#jarrin2006" id="id25">[2]</a> is given as follows. To start with, the turbulent spot mentioned above can be represented as eddies defined by shape function <span class="math notranslate nohighlight">\(f\)</span> which has a compact support on <span class="math notranslate nohighlight">\([-1,1]\)</span> and has the normalization</p>
 <div class="math notranslate nohighlight" id="equation-normalization">
 <span class="eqno">(1.19)<a class="headerlink" href="#equation-normalization" title="Permalink to this equation">¶</a></span>\[\int_{-1}^1 f^2(x) \mathrm{d}x = 1\]</div>
 <p>The inflow plane on which we want to generate the synthetic turbulence with the SEM is basically a finite set of points <span class="math notranslate nohighlight">\(S = \{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_s\}\)</span>. The first step is to create a box of eddies <span class="math notranslate nohighlight">\(B\)</span> surrounding <span class="math notranslate nohighlight">\(S\)</span> which is going to contain the synthetic eddies. It is defined by</p>
@@ -504,7 +511,7 @@ e^{-9r^2/4} &amp; 0\leq |r| &lt; 2 \\
 </div>
 <div class="section" id="divergence-free-synthetic-eddy-method">
 <span id="sectiondfsem"></span><h2><span class="section-number">1.5. </span>Divergence Free Synthetic Eddy Method<a class="headerlink" href="#divergence-free-synthetic-eddy-method" title="Permalink to this headline">¶</a></h2>
-<p>One route to obtain a divergence free method, as suggested by <a class="bibtex reference internal" href="#poletto2013" id="id28">[3]</a>, is to apply the original SEM methodology to the vorticity field, which is then transformed back to the velocity field by taking the curl of it. One easily verifies that vorticity and velocity fields are linked by the following:</p>
+<p>One route to obtain a divergence free method, as suggested by <a class="bibtex reference internal" href="#poletto2013" id="id26">[3]</a>, is to apply the original SEM methodology to the vorticity field, which is then transformed back to the velocity field by taking the curl of it. One easily verifies that vorticity and velocity fields are linked by the following:</p>
 <div class="math notranslate nohighlight" id="equation-theory-turbulent-inflow-37">
 <span class="eqno">(1.61)<a class="headerlink" href="#equation-theory-turbulent-inflow-37" title="Permalink to this equation">¶</a></span>\[\nabla\times\omega' = \nabla(\nabla\cdot\mathbf{u}')-\nabla^2\mathbf{u}'\]</div>
 <p>Because of the hypothesis of incompressible flow, the first term on the right hand side of the above equation vanishes, leading to a Poisson equation for the velocity field. The solution of this Poisson equation, achieved by using the Biot–Savart kernel, leads to the fluctuating velocity field expressed as:</p>
@@ -512,7 +519,7 @@ e^{-9r^2/4} &amp; 0\leq |r| &lt; 2 \\
 <span class="eqno">(1.62)<a class="headerlink" href="#equation-dfsemvelocity" title="Permalink to this equation">¶</a></span>\[\mathbf{u}'(\mathbf{x}) = \sqrt{\frac{1}{N}}\sum_{k=1}^N\frac{q_{\sigma}(|\mathbf{r}^k|)}{|\mathbf{r}^k|}\mathbf{r}^k\times\alpha^k\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{r}^k=(\mathbf{x}-\mathbf{x}^k)/\sigma^k\)</span>, <span class="math notranslate nohighlight">\(q_{\sigma}(|\mathbf{r}^k|)\)</span> is a suitable shape function and <span class="math notranslate nohighlight">\(\alpha_i^k\)</span> are random numbers with zero average which represent the eddy intensities.</p>
 <p>Despite the similarities between <a class="reference internal" href="#equation-semvelocity">(1.22)</a> and <a class="reference internal" href="#equation-dfsemvelocity">(1.62)</a>, i.e. both including a user defined shape function and a random level eddy intensity, the lack of Lund coefficients in the second formulation poses a significant problem. Their role in the original SEM was crucial in order to allow any given turbulence state to be generated, however, they cannot be re-introduced to <a class="reference internal" href="#equation-dfsemvelocity">(1.62)</a> without forgoing the divergence free condition.</p>
-<p>In order to increase the turbulence anisotropy reproduction capabilities, the method presented by <a class="bibtex reference internal" href="#poletto2013" id="id29">[3]</a> employs the formulation of <a class="reference internal" href="#equation-dfsemvelocity">(1.62)</a>, but with an anisotropic length-scale, <span class="math notranslate nohighlight">\(\sigma_i\)</span>, employed in each of the coordinate directions, and allows a different shape function to be associated with each direction. However, such a form no longer automatically satisfies the divergence-free condition ensured by <a class="reference internal" href="#equation-dfsemvelocity">(1.62)</a>, and further constraints on the shape functions need to be considered in order to retain a divergence-free field.  <a class="bibtex reference internal" href="#poletto2013" id="id30">[3]</a> redefine the shape functions to be of the form <span class="math notranslate nohighlight">\(q_{sigma}=q|\mathbf{r}^k|^3\)</span> where <span class="math notranslate nohighlight">\(q\)</span> is a function which depends on the locations <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}^k\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{r}^k\)</span> differs slightly from its previous definition, as it now takes into account the length-scale anisotropy <span class="math notranslate nohighlight">\(\mathbf{r}_{\beta}^k=(\mathbf{x}_{\beta}-\mathbf{x}_{\beta}^k)/\sigma_{\beta}^k\)</span>. The new general formulation for the velocity fluctuations thus becomes:</p>
+<p>In order to increase the turbulence anisotropy reproduction capabilities, the method presented by <a class="bibtex reference internal" href="#poletto2013" id="id27">[3]</a> employs the formulation of <a class="reference internal" href="#equation-dfsemvelocity">(1.62)</a>, but with an anisotropic length-scale, <span class="math notranslate nohighlight">\(\sigma_i\)</span>, employed in each of the coordinate directions, and allows a different shape function to be associated with each direction. However, such a form no longer automatically satisfies the divergence-free condition ensured by <a class="reference internal" href="#equation-dfsemvelocity">(1.62)</a>, and further constraints on the shape functions need to be considered in order to retain a divergence-free field.  <a class="bibtex reference internal" href="#poletto2013" id="id28">[3]</a> redefine the shape functions to be of the form <span class="math notranslate nohighlight">\(q_{sigma}=q|\mathbf{r}^k|^3\)</span> where <span class="math notranslate nohighlight">\(q\)</span> is a function which depends on the locations <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}^k\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{r}^k\)</span> differs slightly from its previous definition, as it now takes into account the length-scale anisotropy <span class="math notranslate nohighlight">\(\mathbf{r}_{\beta}^k=(\mathbf{x}_{\beta}-\mathbf{x}_{\beta}^k)/\sigma_{\beta}^k\)</span>. The new general formulation for the velocity fluctuations thus becomes:</p>
 <div class="math notranslate nohighlight" id="equation-dfsemvelocity2">
 <span class="eqno">(1.63)<a class="headerlink" href="#equation-dfsemvelocity2" title="Permalink to this equation">¶</a></span>\[u_{\beta}'(\mathbf{x}) = \sqrt{\frac{1}{N}}\sum_{k=1}^N q_{\beta}\left(\mathbf{x},\mathbf{x}^k,\sigma^k\right) \epsilon_{\beta j l}r_j^k \alpha_l^k\]</div>
 <p>In <a class="reference internal" href="#equation-dfsemvelocity2">(1.63)</a>, the cross product presented in <a class="reference internal" href="#equation-dfsemvelocity">(1.62)</a> has been rewritten using the index notation for tensors, where <span class="math notranslate nohighlight">\(\epsilon_{ijl}\)</span> is the Levi–Civita symbol, and no summation is implied over Greek subscripts. As noted above, with the redefined shape functions, the form of <a class="reference internal" href="#equation-dfsemvelocity2">(1.63)</a> no longer automatically satisfies the divergence-free condition. However, on substituting it into the condition that <span class="math notranslate nohighlight">\(\nabla\cdot\mathbf{u}'=0\)</span>, a sufficient condition for ensuring a divergence-free velocity field can be found as:</p>
@@ -550,13 +557,13 @@ r_1^k\frac{\partial q_3}{x_3} = r_3^k\frac{\partial q_1}{x_1}\]</div>
 </div>
 <div class="section" id="turbulent-spot-method-with-anisotropic-vorton">
 <span id="sectionatsm"></span><h2><span class="section-number">1.6. </span>Turbulent Spot Method with Anisotropic Vorton<a class="headerlink" href="#turbulent-spot-method-with-anisotropic-vorton" title="Permalink to this headline">¶</a></h2>
-<p>Earlier versions of the synthetic eddy method and the turbulent spot method were only able to produce turbulence which does not obey the continuity constraint in general. This was only possible for special cases (isotropic or near-isotropic turbulence). The work of <a class="bibtex reference internal" href="#kroger2018" id="id31">[4]</a> utilizes another approach for introducing the anisotropy into the turbulent spots, which obeys continuity and allows to reproduce strong levels of anisotropy at the same time. Their approach is basically a continuation of the vorton formulation described in <a class="bibtex reference internal" href="#kornev2007" id="id32">[17]</a>. The generation is performed in the coordinate system <span class="math notranslate nohighlight">\((x_1,x_2,x_3)\)</span> determined by principle axes of the Reynolds stresses. The Reynolds stresses in any other system <span class="math notranslate nohighlight">\((x_1',x_2',x_3')\)</span> are calculated by <span class="math notranslate nohighlight">\(R_{ij}' = E_{pi}R_{pq}E_{qj}\)</span>, where <span class="math notranslate nohighlight">\(E_{ij}\)</span> is the rotation matrix describing coordinate transformation between <span class="math notranslate nohighlight">\((x_1,x_2,x_3)\)</span> and <span class="math notranslate nohighlight">\((x_1',x_2',x_3')\)</span> axes system. Integral lengths in different coordinate systems can be found from the relation:</p>
+<p>Earlier versions of the synthetic eddy method and the turbulent spot method were only able to produce turbulence which does not obey the continuity constraint in general. This was only possible for special cases (isotropic or near-isotropic turbulence). The work of <a class="bibtex reference internal" href="#kroger2018" id="id29">[4]</a> utilizes another approach for introducing the anisotropy into the turbulent spots, which obeys continuity and allows to reproduce strong levels of anisotropy at the same time. Their approach is basically a continuation of the vorton formulation described in <a class="bibtex reference internal" href="#kornev2007" id="id30">[17]</a>. The generation is performed in the coordinate system <span class="math notranslate nohighlight">\((x_1,x_2,x_3)\)</span> determined by principle axes of the Reynolds stresses. The Reynolds stresses in any other system <span class="math notranslate nohighlight">\((x_1',x_2',x_3')\)</span> are calculated by <span class="math notranslate nohighlight">\(R_{ij}' = E_{pi}R_{pq}E_{qj}\)</span>, where <span class="math notranslate nohighlight">\(E_{ij}\)</span> is the rotation matrix describing coordinate transformation between <span class="math notranslate nohighlight">\((x_1,x_2,x_3)\)</span> and <span class="math notranslate nohighlight">\((x_1',x_2',x_3')\)</span> axes system. Integral lengths in different coordinate systems can be found from the relation:</p>
 <div class="math notranslate nohighlight" id="equation-ltransform">
 <span class="eqno">(1.72)<a class="headerlink" href="#equation-ltransform" title="Permalink to this equation">¶</a></span>\[L_{ii}(x_1',x_2',x_3') = \sum_{k=1}^3E_{ki}^2\frac{R_{kk}(x_1,x_2,x_3)}{R_{ii}'(x_1',x_2',x_3')}L_{kk}(x_1,x_2,x_3)\]</div>
 <p>In <a class="reference internal" href="#equation-ltransform">(1.72)</a>, the vector the vector potential is scaled by a function with spherical symmetry which in the case of the spectrum of decaying turbulence gives an analytic expression:</p>
 <div class="math notranslate nohighlight" id="equation-theory-turbulent-inflow-42">
 <span class="eqno">(1.73)<a class="headerlink" href="#equation-theory-turbulent-inflow-42" title="Permalink to this equation">¶</a></span>\[\mathbf{A}(x_1,x_2,x_3) = Ce^{-\frac{1}{2}k_0^2r^2}\mathbf{\gamma}\]</div>
-<p>Also note that other spectra <span class="math notranslate nohighlight">\(E(k)\)</span> could be used in principle. This would result in different shapes of the inner velocity distribution. For the sake of simplicity and because it yields reasonably simple formulas, the work of <a class="bibtex reference internal" href="#kroger2018" id="id33">[4]</a> is restricted to this spectrum.</p>
+<p>Also note that other spectra <span class="math notranslate nohighlight">\(E(k)\)</span> could be used in principle. This would result in different shapes of the inner velocity distribution. For the sake of simplicity and because it yields reasonably simple formulas, the work of <a class="bibtex reference internal" href="#kroger2018" id="id31">[4]</a> is restricted to this spectrum.</p>
 <p>The spherical symmetry of <span class="math notranslate nohighlight">\(\mathbf{A}(x_1,x_2,x_3)\)</span> is the reason for the isotropy of turbulence generated using these vortons. At this level, anisotropy can be introduced by stretching the coordinates individually, i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-theory-turbulent-inflow-43">
 <span class="eqno">(1.74)<a class="headerlink" href="#equation-theory-turbulent-inflow-43" title="Permalink to this equation">¶</a></span>\[x_1\rightarrow x_1/\sigma_1,\quad x_2\rightarrow x_2/\sigma_2,\quad x_3\rightarrow x_3/\sigma_3\]</div>
@@ -628,7 +635,7 @@ r_1^k\frac{\partial q_3}{x_3} = r_3^k\frac{\partial q_1}{x_1}\]</div>
 <p>or</p>
 <div class="math notranslate nohighlight" id="equation-theory-turbulent-inflow-51">
 <span class="eqno">(1.88)<a class="headerlink" href="#equation-theory-turbulent-inflow-51" title="Permalink to this equation">¶</a></span>\[L_{22} = \frac{\pm L_{11}L_{33}\sqrt{R_{22}}}{\pm L_{33}\sqrt{R_{11}}\pm L_{11}\sqrt{R_{33}}}\]</div>
-<p>The signs before different terms are independent of each other. Therefore, the integral lengths can not be arbitrary. If two length scales <span class="math notranslate nohighlight">\(L_{11}\)</span> and <span class="math notranslate nohighlight">\(L_{22}\)</span> are prescribed the remaining length should satisfy the conditions above. Particularly, this solution is wrong for the isotropic turbulence since, if <span class="math notranslate nohighlight">\(R_{11} = R_{22} = R_{33}\)</span> and <span class="math notranslate nohighlight">\(L_{11} = L_{33} = L\)</span>, the third length is <span class="math notranslate nohighlight">\(L_{22} = L/2\)</span> although all integral lengths based on longitudinal auto-correlation functions should be equal. One possible remedy of the length scale restriction is to superpose two statistically independent anisotropic vortons with different parameters at the same position. It is then possible to prescribe arbitrary combinations of length scales and Reynolds stresses. Two approaches for determination of the free parameters are proposed by <a class="bibtex reference internal" href="#kroger2018" id="id34">[4]</a>:</p>
+<p>The signs before different terms are independent of each other. Therefore, the integral lengths can not be arbitrary. If two length scales <span class="math notranslate nohighlight">\(L_{11}\)</span> and <span class="math notranslate nohighlight">\(L_{22}\)</span> are prescribed the remaining length should satisfy the conditions above. Particularly, this solution is wrong for the isotropic turbulence since, if <span class="math notranslate nohighlight">\(R_{11} = R_{22} = R_{33}\)</span> and <span class="math notranslate nohighlight">\(L_{11} = L_{33} = L\)</span>, the third length is <span class="math notranslate nohighlight">\(L_{22} = L/2\)</span> although all integral lengths based on longitudinal auto-correlation functions should be equal. One possible remedy of the length scale restriction is to superpose two statistically independent anisotropic vortons with different parameters at the same position. It is then possible to prescribe arbitrary combinations of length scales and Reynolds stresses. Two approaches for determination of the free parameters are proposed by <a class="bibtex reference internal" href="#kroger2018" id="id32">[4]</a>:</p>
 <ol class="loweralpha simple">
 <li><p>Analytic Determination (Type R). In this formulation, it is intended to fulfill all prescribed Reynolds stresses at once. As becomes obvious from <a class="reference internal" href="#equation-anisotropiccondition">(1.87)</a>, then at least one length scale has to be constrained. A natural choice is to constrain <span class="math notranslate nohighlight">\(L_{33}\)</span>, which is associated with minimum principal Reynolds stress direction <span class="math notranslate nohighlight">\(R_{33}\)</span>. Thus, <span class="math notranslate nohighlight">\(L_{11}\)</span> and <span class="math notranslate nohighlight">\(L_{22}\)</span> remain unchanged while <span class="math notranslate nohighlight">\(L_{33}\)</span> follows from:</p></li>
 </ol>
@@ -648,7 +655,7 @@ r_1^k\frac{\partial q_3}{x_3} = r_3^k\frac{\partial q_1}{x_1}\]</div>
     &amp;\gamma_2 = \frac{1}{\sigma_2^2}\left(\gamma_1\sigma_1^2-\frac{2}{\pi}\sqrt{\frac{L_{11}L_{22}}{L_{33}}R_{33}}\right) \\
     &amp;\gamma_3 = \frac{1}{\sigma_3^2}\left(\gamma_1\sigma_1^2-\frac{2}{\pi}\sqrt{\frac{L_{11}L_{33}}{L_{22}}R_{22}}\right)
 \end{split}\end{split}\]</div>
-<p>with <span class="math notranslate nohighlight">\(\sigma_i\)</span> given by <a class="reference internal" href="#equation-anisotropicscale">(1.85)</a>. By determining parameters this way, Reynolds stresses are fulfilled and length scales are only approximately fulfilled. The anisotropic turbulent spot method with this kind of parameter determination is labeled by “Type R” in the work of <a class="bibtex reference internal" href="#kroger2018" id="id35">[4]</a>.</p>
+<p>with <span class="math notranslate nohighlight">\(\sigma_i\)</span> given by <a class="reference internal" href="#equation-anisotropicscale">(1.85)</a>. By determining parameters this way, Reynolds stresses are fulfilled and length scales are only approximately fulfilled. The anisotropic turbulent spot method with this kind of parameter determination is labeled by “Type R” in the work of <a class="bibtex reference internal" href="#kroger2018" id="id33">[4]</a>.</p>
 <ol class="loweralpha simple" start="2">
 <li><p>Pseudo Inverse (Type L). In this approach, it is intended to fulfill all prescribed length scales. Although it is not possible to account for all Reynolds stresses at the same time, it is possible to formulate a minimization problem and solve for the closest possible Reynolds stress state. First, the <span class="math notranslate nohighlight">\(\sigma_i\)</span> are computed from the prescribed length scales <a class="reference internal" href="#equation-anisotropicscale">(1.85)</a>. With fixed length scales, the Reynolds stresses follow from the following system of equations, which is unsolvable because of the zero diagonal:</p></li>
 </ol>
@@ -687,10 +694,10 @@ r_1^k\frac{\partial q_3}{x_3} = r_3^k\frac{\partial q_1}{x_1}\]</div>
 </div>
 <div class="section" id="code-implementation">
 <h1><span class="section-number">2. </span>Code Implementation<a class="headerlink" href="#code-implementation" title="Permalink to this headline">¶</a></h1>
-<p>The turbulent inflow tool provides a simple and efficient solution for generating a spatially and temporally correlated turbulent velocity field at the inflow of the computational domain via the open-source code,  OpenFOAM. It is developed based on the digital filtering method <a class="bibtex reference internal" href="#klein2003" id="id36">[8]</a><a class="bibtex reference internal" href="#xie2008" id="id37">[1]</a>, the synthetic eddy method <a class="bibtex reference internal" href="#jarrin2006" id="id38">[2]</a><a class="bibtex reference internal" href="#poletto2013" id="id39">[3]</a> and the turbulent spot method <a class="bibtex reference internal" href="#kroger2018" id="id40">[4]</a>. The back-end of the turbulent inflow tool is a custom-designed C++ library which contains a list of turbulent velocity boundary conditions developed within OpenFOAM. These boundary conditions can be used to feed the inflow plane with time-varying turbulent velocity signals. Note that the inflow tool provides the source code for two latest standard public versions of the OpenFOAM, i.e., version 6.0 and 7.0, respectively.</p>
-<p>The tool can be mainly in two approaches. For users who are quite familiar with OpenFOAM, one can download the source code of the presented boundary conditions, compile the code locally on personal computers (or servers) and then carry out simulations as if those boundary conditions are originally available in the standard OpenFOAM. Similar to other boundary conditions available in OpenFOAM, the use of the presented boundary conditions requires adding some specific entries to the related files in an OpenFOAM project. For users who are not familiar with OpenFOAM, a user-interface (i.e., the front-end of the turbulent inflow tool), which help users to customize the related entries in the OpenFOAM project, is provided.</p>
+<p>The turbulence inflow tool provides a simple and efficient solution for generating a spatially and temporally correlated turbulent velocity field at the inflow of the computational domain via the open-source code,  OpenFOAM. It is developed based on the digital filtering method <a class="bibtex reference internal" href="#klein2003" id="id34">[8]</a><a class="bibtex reference internal" href="#xie2008" id="id35">[1]</a>, the synthetic eddy method <a class="bibtex reference internal" href="#jarrin2006" id="id36">[2]</a><a class="bibtex reference internal" href="#poletto2013" id="id37">[3]</a> and the turbulent spot method <a class="bibtex reference internal" href="#kroger2018" id="id38">[4]</a>. The back-end of the turbulence inflow tool is a custom-designed C++ library which contains a list of turbulent velocity boundary conditions developed within OpenFOAM. These boundary conditions can be used to feed the inflow plane with time-varying turbulent velocity signals. Note that the inflow tool provides the source code for two latest standard public versions of the OpenFOAM, i.e., version 6.0 and 7.0, respectively.</p>
+<p>The tool can be mainly in two approaches. For users who are quite familiar with OpenFOAM, one can download the source code of the presented boundary conditions, compile the code locally on personal computers (or servers) and then carry out simulations as if those boundary conditions are originally available in the standard OpenFOAM. Similar to other boundary conditions available in OpenFOAM, the use of the presented boundary conditions requires adding some specific entries to the related files in an OpenFOAM project. For users who are not familiar with OpenFOAM, a user-interface (i.e., the front-end of the turbulence inflow tool), which help users to customize the related entries in the OpenFOAM project, is provided.</p>
 <p>Before an introduction on the input entries required, it is good to have a preliminary understanding of the file system of a general OpenFOAM project first. To start with, there are usually three folders, i.e., the <em>0</em>, <em>constant</em> and <em>system</em> folders, inside a valid project. The <em>0</em> folder contains the files which specify the initial conditions and boundary conditions for different variable fields, e.g., velocity, pressure and turbulent kinetic energy. The <em>constant</em> folder includes the files storing the geometry information of the mesh and some constant parameters related to the viscosity of the fluid and the turbulence model (if required). The <em>system</em> folder contains files which concern the specification of the time-length (or steps) of simulations, the numerical schemes employed for spatially and temporal discretization, the non-linear equation solution method and other related numerical settings.</p>
-<p>As mentioned earlier, the source code of the turbulent inflow tool provides some custom-developed boundary conditions for velocities. To implement those boundary conditions during a simulation, there are three files needs to be either modified or created accordingly. These files include: the <em>U</em> file in the <em>0</em> folder, the <em>inflowProperties</em> file in the <em>constant</em> folder and the <em>controlDict</em> file in the <em>system</em> folder. Compared to the <em>U</em> and <em>controlDict</em> files which are required by default in a standard OpenFOAM project, the <em>inflowProperties</em> file is a special item required (when necessary) by the presented boundary conditions. It is designed to store some statistical properties of the target turbulence which include mean velocities, Reynolds stresses and integral length scales.</p>
+<p>As mentioned earlier, the source code of the turbulence inflow tool provides some custom-developed boundary conditions for velocities. To implement those boundary conditions during a simulation, there are several files needs to be either modified or created accordingly. These files include: the <em>U</em> file in the <em>0</em> folder, the <em>inflowProperties</em> file in the <em>constant</em> folder and the <em>controlDict</em> file in the <em>system</em> folder. Compared to the <em>U</em> and <em>controlDict</em> files which are required by default in a standard OpenFOAM project, the <em>inflowProperties</em> file is a special item required (when necessary) by the presented boundary conditions. It is designed to store some statistical properties of the target turbulence which include mean velocities, Reynolds stresses and integral length scales.</p>
 <div class="section" id="modifications-regarding-the-controldict-file">
 <h2><span class="section-number">2.1. </span>Modifications regarding the controlDict file<a class="headerlink" href="#modifications-regarding-the-controldict-file" title="Permalink to this headline">¶</a></h2>
 <p>We now introduce the entries or scripts need to be defined in or added to the above mentioned three files respectively. To start with, we consider the <em>controlDict</em> file (inside the <em>system</em> folder) and an example of this file is given as follows.</p>
@@ -806,11 +813,11 @@ boundaryField
 // ************************************************************************* //
 </pre></div>
 </div>
-<p>The boundary conditions for velocities are all specified in the <em>boundaryField</em> dictionary, and there are several sub-dictionaries in the <em>boundaryField</em> dictionary with the names such as <em>inlet</em>, <em>outlet</em>, <em>wall</em>, etc. The name of each sub-dictionary corresponds to the name of a particular boundary patch of the mesh, and the entries contained in each sub-dictionary are the related to the boundary condition for the velocity field at the corresponding boundary patch. Let’s focus on the sub-dictionary associated with the inflow patch, i.e., the <em>inlet</em> sub-dictionary. The commonly used boundary condition for the velocity at the inflow is the <em>fixedValue</em> condition (see the sub-dictionary <em>inletOld</em>). For a <em>fixedValue</em> velocity boundary, the velocities at the <em>inlet</em> patch are constant and fixed to the vector specified inside the baskets (coming after the the <em>values</em> entry) during the simulation. In our case, we would like to the velocities at the <em>inlet</em> patch to be stochastic and time-varying. For this purpose, the developed turbulent inflow package currently provides four boundary conditions in total, i.e. <em>turbulentDFMInlet</em>, <em>turbulentSEMInlet</em>, <em>turbulentDFSEMInlet</em> and <em>turbulentATSMInlet</em>. These four boundary conditions correspond to the synthetic turbulent method by <a class="bibtex reference internal" href="#klein2003" id="id41">[8]</a>, <a class="bibtex reference internal" href="#jarrin2006" id="id42">[2]</a>, <a class="bibtex reference internal" href="#poletto2013" id="id43">[3]</a> and <a class="bibtex reference internal" href="#kroger2018" id="id44">[4]</a>, respectively.</p>
+<p>The boundary conditions for velocities are all specified in the <em>boundaryField</em> dictionary, and there are several sub-dictionaries in the <em>boundaryField</em> dictionary with the names such as <em>inlet</em>, <em>outlet</em>, <em>wall</em>, etc. The name of each sub-dictionary corresponds to the name of a particular boundary patch of the mesh, and the entries contained in each sub-dictionary are the related to the boundary condition for the velocity field at the corresponding boundary patch. Let’s focus on the sub-dictionary associated with the inflow patch, i.e., the <em>inlet</em> sub-dictionary. The commonly used boundary condition for the velocity at the inflow is the <em>fixedValue</em> condition (see the sub-dictionary <em>inletOld</em>). For a <em>fixedValue</em> velocity boundary, the velocities at the <em>inlet</em> patch are constant and fixed to the vector specified inside the baskets (coming after the the <em>values</em> entry) during the simulation. In our case, we would like to the velocities at the <em>inlet</em> patch to be stochastic and time-varying. For this purpose, the developed turbulence inflow package currently provides four boundary conditions in total, i.e. <em>turbulentDFMInlet</em>, <em>turbulentSEMInlet</em>, <em>turbulentDFSEMInlet</em> and <em>turbulentATSMInlet</em>. These four boundary conditions correspond to the synthetic turbulent method by <a class="bibtex reference internal" href="#klein2003" id="id39">[8]</a>, <a class="bibtex reference internal" href="#jarrin2006" id="id40">[2]</a>, <a class="bibtex reference internal" href="#poletto2013" id="id41">[3]</a> and <a class="bibtex reference internal" href="#kroger2018" id="id42">[4]</a>, respectively.</p>
 <p>Also note that each presented boundary condition is, as a matter of fact, a derived class of the <em>fixedValue</em> boundary condition. Since the initialization of the <em>fixedValue</em> boundary condition requires the specification of the <em>value</em> entry. Therefore, this entry should be defined for the four presented boundary conditions as well. However, when one of the four presented boundary conditions is employed, the velocities at the boundary will be later overwritten by the generated turbulence velocity field and consequently the <em>value</em> entry does not have any effect here. Thus, this entry can be just specified as <em>$internalField;</em> Once the <em>type</em> entry takes the <em>turbulentDFMInlet</em>, <em>turbulentSEMInlet</em>, <em>turbulentDFSEMInlet</em> or <em>turbulentATSMInlet</em> boundary condition, there are some unique entries related to each boundary condition accordingly.</p>
 <p>Apart from the <em>type</em> and <em>value</em> entries, there are also some identical entries shared by the four presented boundary conditions. The entries <em>periodicInY</em> and <em>periodicInZ</em> determine whether the synthetic turbulence is periodic in <span class="math notranslate nohighlight">\(x_2\)</span> and <span class="math notranslate nohighlight">\(x_3\)</span>-direction or not, respectively. Before we discuss the <em>cleanRestart</em> entry, it should be mentioned that the four presented boundary conditions are capable of restarting the generation of the synthetic turbulence from an old time-step. This feature is achieved by storing the necessary information and numerical quantities (obtained at the current time-step) which will affect the generation of the turbulence at the next-step. The entry <em>cleanRestart</em> determines whether to disregard those information and generate a new turbulent velocity field at the beginning of a new simulation.</p>
-<span id="table-tinf-theory-01"></span><table class="docutils align-center" id="id45">
-<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">Basic entries shared by the four presented boundary conditions</span><a class="headerlink" href="#id45" title="Permalink to this table">¶</a></caption>
+<span id="table-tinf-theory-01"></span><table class="docutils align-center" id="id43">
+<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">Basic entries shared by the four presented boundary conditions</span><a class="headerlink" href="#id43" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 4%" />
@@ -845,8 +852,8 @@ boundaryField
 <div class="section" id="the-turbulentdfminlet-boundary-condition">
 <h3>The turbulentDFMInlet boundary condition<a class="headerlink" href="#the-turbulentdfminlet-boundary-condition" title="Permalink to this headline">¶</a></h3>
 <p>For the <em>turbulentDFMInlet</em> boundary condition, the unique entries to be specified are <em>filterType</em>, <em>filterFactor</em> and <em>gridFactor</em>. The <em>filterShape</em> entry refers to the type of the prescribed function for computing the filter coefficients, and requires a string input. When this entry is taken as <em>gaussian</em>, the coefficients are computed with <a class="reference internal" href="#equation-gaussian">(1.6)</a>; when this entry is taken as <em>exponential</em>, the coefficients follow from <a class="reference internal" href="#equation-exponential">(1.10)</a>. As discussed earlier, the digital filtering method should be employed on uniform spacing Cartesian grids. To make this method applies to more general cases, a virtual uniform spacing Cartesian grid system will be generated during the implementation. The velocity fluctuations will be first generated on this virtual grid and then interpolated to the discrete points on the inflow patch. The <em>gridFactor</em> entry defines ratio between the virtual grid spacing <span class="math notranslate nohighlight">\(\Delta\)</span> with the square root of the area of the smallest face element on the inflow plane. Higher <em>gridFactor</em> leads to larger grid spacing and vice versa. Finally, the <em>filterFactor</em> entry denotes the values of <span class="math notranslate nohighlight">\(N/n\)</span> where <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(n\)</span> follow from the notation in <a class="reference internal" href="#sectiondfm"><span class="std std-numref">Section 1.3</span></a>, and consequently it requires an integer input. The entries related to the <em>turbulentDFMInlet</em> boundary, their input variable types and limitations are listed in <a class="reference internal" href="#table-tinf-theory-02"><span class="std std-numref">Table 2.2</span></a>.</p>
-<span id="table-tinf-theory-02"></span><table class="docutils align-center" id="id46">
-<caption><span class="caption-number">Table 2.2 </span><span class="caption-text">Entries related to the <em>turbulentDFMInlet</em> boundary condition</span><a class="headerlink" href="#id46" title="Permalink to this table">¶</a></caption>
+<span id="table-tinf-theory-02"></span><table class="docutils align-center" id="id44">
+<caption><span class="caption-number">Table 2.2 </span><span class="caption-text">Entries related to the <em>turbulentDFMInlet</em> boundary condition</span><a class="headerlink" href="#id44" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 19%" />
 <col style="width: 10%" />
@@ -882,8 +889,8 @@ boundaryField
 <div class="section" id="the-turbulentseminlet-boundary-condition">
 <h3>The turbulentSEMInlet boundary condition<a class="headerlink" href="#the-turbulentseminlet-boundary-condition" title="Permalink to this headline">¶</a></h3>
 <p>For the <em>turbulentSEMInlet</em> boundary condition, the unique entries to be specified are <em>eddyType</em> and <em>eddyDensity</em>. The <em>eddyType</em> entry refers to the type of the velocity shape function <span class="math notranslate nohighlight">\(f\)</span>. It takes an string input and currently the available options are <em>tent</em>, <em>step</em> and <em>gaussian</em> which correspond to <a class="reference internal" href="#equation-ftent">(1.55)</a>, <a class="reference internal" href="#equation-fstep">(1.57)</a> and <a class="reference internal" href="#equation-fgaussian">(1.59)</a>, respectively. The <em>eddyDensity</em> refers to the ratio between <span class="math notranslate nohighlight">\(V_B\)</span> and the sum of the eddy volumes (see <a class="reference internal" href="#sectionsem"><span class="std std-numref">Section 1.4</span></a>). Higher <em>eddyDensity</em> leads to a larger amount of synthetic eddies. It takes an scalar input with a value no less than one. The lower bound of <em>eddyDensity</em> (taken as 1 by default) ensures the eddy box (introduced in <a class="reference internal" href="#sectionsem"><span class="std std-numref">Section 1.4</span></a>), from a statistical point of view, can be covered up by the eddies. The unique entries for the <em>turbulentSEMInlet</em> condition are summarized in <a class="reference internal" href="#table-tinf-theory-03"><span class="std std-numref">Table 2.3</span></a>.</p>
-<span id="table-tinf-theory-03"></span><table class="docutils align-center" id="id47">
-<caption><span class="caption-number">Table 2.3 </span><span class="caption-text">Entries related to the <em>turbulentSEMInlet</em> boundary condition</span><a class="headerlink" href="#id47" title="Permalink to this table">¶</a></caption>
+<span id="table-tinf-theory-03"></span><table class="docutils align-center" id="id45">
+<caption><span class="caption-number">Table 2.3 </span><span class="caption-text">Entries related to the <em>turbulentSEMInlet</em> boundary condition</span><a class="headerlink" href="#id45" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 21%" />
 <col style="width: 11%" />
@@ -918,8 +925,8 @@ boundaryField
 <div class="section" id="the-turbulentatsminlet-boundary-condition">
 <h3>The turbulentATSMInlet boundary condition<a class="headerlink" href="#the-turbulentatsminlet-boundary-condition" title="Permalink to this headline">¶</a></h3>
 <p>For the <em>turbulentATSMInlet</em> boundary condition, the unique entries to be specified are <em>vortonType</em> and <em>vortonDensity</em>. The <em>vortonType</em> entry refers the approach parameter determination for anisotropic vortons discussed in <a class="reference internal" href="#sectionatsm"><span class="std std-numref">Section 1.6</span></a>. It takes an string input and the options currently available are <em>typeR</em> and <em>typeL</em> which correspond to <a class="reference internal" href="#equation-fstep">(1.57)</a> and <a class="reference internal" href="#equation-fgaussian">(1.59)</a>, respectively. The <em>vortonDensity</em> entry is similar to the <em>eddyDensity</em> of the <em>turbulentSEMInlet</em> boundary condition. We summarize the unique entries for the <em>turbulentATSMInlet</em> condition in <a class="reference internal" href="#table-tinf-theory-04"><span class="std std-numref">Table 2.4</span></a> for reference.</p>
-<span id="table-tinf-theory-04"></span><table class="docutils align-center" id="id48">
-<caption><span class="caption-number">Table 2.4 </span><span class="caption-text">Entries related to the <em>turbulentATSMInlet</em> boundary condition</span><a class="headerlink" href="#id48" title="Permalink to this table">¶</a></caption>
+<span id="table-tinf-theory-04"></span><table class="docutils align-center" id="id46">
+<caption><span class="caption-number">Table 2.4 </span><span class="caption-text">Entries related to the <em>turbulentATSMInlet</em> boundary condition</span><a class="headerlink" href="#id46" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 28%" />
 <col style="width: 13%" />
@@ -1012,7 +1019,7 @@ boundaryField
 }
 </pre></div>
 </div>
-<p>It is noted that each element in <em>R</em> defines a six-component symmetric tensor of the form <span class="math notranslate nohighlight">\((R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})\)</span>. For the <em>turbulentDFMInlet</em> and <em>turbulentSEMInlet</em> boundary conditions, each element in <em>L</em> defines a nine-component tensor of the form (<span class="math notranslate nohighlight">\(L_{11}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{11}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{11}^{x_3}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_3}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_3})\)</span>. For the <em>turbulentATSMInlet</em> boundary condition, each element in <em>L</em> defines a three-component vector of the form <span class="math notranslate nohighlight">\((L_{11} \ L_{22} \ L_{33})\)</span>.  For the <em>turbulentDFSEMInlet</em> boundary condition, each element in <em>L</em> is a scalar. The main difficultly in specifying the entries <em>U</em>, <em>R</em> and <em>L</em> directly is to make sure that the sequence of the elements in each entry is properly sorted coping with the corresponding faces on the inflow plane.</p>
+<p>It is noted that each element in <em>R</em> defines a six-component symmetric tensor of the form <span class="math notranslate nohighlight">\((R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})\)</span>. For the <em>turbulentDFMInlet</em> and <em>turbulentSEMInlet</em> boundary conditions, each element in <em>L</em> defines a nine-component tensor of the form (<span class="math notranslate nohighlight">\(L_{11}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{11}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{11}^{x_3}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_3}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_3})\)</span>. For the <em>turbulentATSMInlet</em> boundary condition, each element in <em>L</em> defines a three-component vector of the form <span class="math notranslate nohighlight">\((L_{11}^{x_1} L_{22}^{x_2} L_{33}^{x_3})\)</span>.  For the <em>turbulentDFSEMInlet</em> boundary condition, each element in <em>L</em> is a scalar. The main difficultly in specifying the entries <em>U</em>, <em>R</em> and <em>L</em> directly is to make sure that the sequence of the elements in each entry is properly sorted coping with the corresponding faces on the inflow plane.</p>
 </div>
 <div class="section" id="specification-via-interpolation">
 <h3>Specification via interpolation<a class="headerlink" href="#specification-via-interpolation" title="Permalink to this headline">¶</a></h3>
@@ -1020,16 +1027,16 @@ boundaryField
 <ul class="simple">
 <li><p>Create a folder with the name <em>boundaryData</em> inside the <em>constant</em> folder of a standard OpenFOAM project.</p></li>
 </ul>
-<div class="align-center figure" id="id49">
+<div class="align-center figure" id="id47">
 <span id="fig-tinf-theory-01"></span><a class="reference internal image-reference" href="../_images/TInF-theory-01.jpg"><img alt="../_images/TInF-theory-01.jpg" src="../_images/TInF-theory-01.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">The <em>boundaryData</em> folder</span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">The <em>boundaryData</em> folder</span><a class="headerlink" href="#id47" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>Create another folder using the name of the inflow patch inside the above created folder.</p></li>
 </ul>
-<div class="align-center figure" id="id50">
+<div class="align-center figure" id="id48">
 <span id="fig-tinf-theory-02"></span><a class="reference internal image-reference" href="../_images/TInF-theory-02.jpg"><img alt="../_images/TInF-theory-02.jpg" src="../_images/TInF-theory-02.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">The <em>inlet</em> folder</span><a class="headerlink" href="#id50" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">The <em>inlet</em> folder</span><a class="headerlink" href="#id48" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>Add four empty files with the names <em>U</em>, <em>R</em>, <em>L</em> and <em>points</em>, respectively inside the <em>inlet</em> folder. These four files will be used to store the given values of the mean velocity magnitude, Reynolds stress, integral scale at some specific points and the locations of those points in the global coordinate system (of the computational domain).</p></li>
@@ -1092,9 +1099,9 @@ boundaryField
 <div class="section" id="specification-via-prescribed-functions">
 <h3>Specification via prescribed functions<a class="headerlink" href="#specification-via-prescribed-functions" title="Permalink to this headline">¶</a></h3>
 <p>Finally, the specification of the mean velocities, Reynolds stresses and integral length scales can also be done with the prescribed functions embedded in the presented boundary conditions. The entries related to this approach are all defined in the <em>inflowProperties</em> file in the <em>constant</em> folder. To employ this approach, the first step is to define a local coordinate system and its origin. The local <span class="math notranslate nohighlight">\((x_1',x_2',x_3')\)</span> coordinate system is constructed with its <span class="math notranslate nohighlight">\(x_1'\)</span>-axis being parallel to normal of the inflow plane and pointing towards the interior of the computational domain.</p>
-<div class="align-center figure" id="id51">
-<span id="fig-tinf-theory-03"></span><a class="reference internal image-reference" href="../_images/TInF-theory-03.eps"><img alt="../_images/TInF-theory-03.eps" src="../_images/TInF-theory-03.eps" style="width: 250px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">A sketch of the Euler angles and the <span class="math notranslate nohighlight">\(N\)</span>-axis</span><a class="headerlink" href="#id51" title="Permalink to this image">¶</a></p>
+<div class="align-center figure" id="id49">
+<span id="fig-tinf-theory-03"></span><a class="reference internal image-reference" href="../_images/TInF-theory-03.png"><img alt="../_images/TInF-theory-03.png" src="../_images/TInF-theory-03.png" style="width: 250px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">A sketch of the Euler angles and the <span class="math notranslate nohighlight">\(N\)</span>-axis</span><a class="headerlink" href="#id49" title="Permalink to this image">¶</a></p>
 </div>
 <p>To determine the orientation of the <span class="math notranslate nohighlight">\(x_2'\)</span>- and <span class="math notranslate nohighlight">\(x_3'\)</span>-axis, an entry named as <em>Naxis</em> is defined which takes a vector input. This vector represents the direction of the <span class="math notranslate nohighlight">\(N\)</span>-axis (see <a class="reference internal" href="#fig-tinf-theory-03"><span class="std std-numref">Fig. 2.3</span></a>) where <span class="math notranslate nohighlight">\(N\)</span> is the intersection line of the <span class="math notranslate nohighlight">\((x_1,x_2)\)</span>-plane and <span class="math notranslate nohighlight">\((x_1',x_2')\)</span>-plane. The <span class="math notranslate nohighlight">\(x_2'\)</span>- and <span class="math notranslate nohighlight">\(x_3'\)</span>-axis are then determined by <span class="math notranslate nohighlight">\(\mathbf{x}_2' = \mathbf{x}_3'\times\mathbf{x}_1'\)</span> and <span class="math notranslate nohighlight">\(\mathbf{x}_3' = \mathbf{x}_1'\times\mathbf{N}\)</span>. The reason why we specify the direction of the <span class="math notranslate nohighlight">\(N\)</span>-axis instead of the <span class="math notranslate nohighlight">\(x_2'\)</span>- or <span class="math notranslate nohighlight">\(x_3'\)</span>-axis is because, once the direction of the <span class="math notranslate nohighlight">\(x_1'\)</span>-axis is determined, the <span class="math notranslate nohighlight">\(x_2\)</span>- and <span class="math notranslate nohighlight">\(x_3\)</span>-axis cannot be specified arbitrarily since they must be parallel to the plane orthogonal to the <span class="math notranslate nohighlight">\(x_1\)</span>-axis. In contrast, the direction of the <span class="math notranslate nohighlight">\(N\)</span>-axis can be specified arbitrarily as long as the <span class="math notranslate nohighlight">\(x_3\)</span>-components of <span class="math notranslate nohighlight">\(N\)</span> is zero. The entry <em>Naxis</em> is set as <span class="math notranslate nohighlight">\((0 \ 0 \ 0)\)</span> by default. In this case, the <span class="math notranslate nohighlight">\((x_1',x_2')\)</span>-plane and <span class="math notranslate nohighlight">\((x_1,x_2)\)</span>-plane are parallel to each other and consequently the <span class="math notranslate nohighlight">\(x_3\)</span>- and <span class="math notranslate nohighlight">\(x_3'\)</span>-axis are align.</p>
 <p>Now, the remaining issue is the determination of the origin of the local coordinate system. Consider a rectangular defined on the <span class="math notranslate nohighlight">\((x_2,x_3)\)</span>-plane bounding all the nodes of the inflow patch. The origin of the local coordinate system is chosen as the lower left corner of this rectangular by default. We also allow users to offset the origin through the use of the entries <em>yOffset</em> and <em>zOffset</em> which take scalars for input.</p>
@@ -1140,7 +1147,7 @@ LDict
 // ************************************************************************* //
 </pre></div>
 </div>
-<p>In addition to the entries mentioned above, there are a total of three sub-dictionaries need to be specified in the <em>inflowProperties</em> file, i.e. <em>UDict</em>, <em>RDict</em> and <em>LDict</em>, which are responsible for the specifications of the mean velocity magnitude, the Reynolds stress tensor <span class="math notranslate nohighlight">\((R_{11}, R_{21}, R_{31}, R_{22}, R_{32}, R_{33})\)</span> and the integral length scales <span class="math notranslate nohighlight">\((L_{11}^{x_1}, L_{22}^{x_2}, L_{33}^{x_3})\)</span>. Note <span class="math notranslate nohighlight">\(L_{11}^{x_1}\)</span> refers to the integral length scale obtained by integrating the two-point correlation function <span class="math notranslate nohighlight">\(R_{11}(\mathbf{x})\)</span> with respect to the local <span class="math notranslate nohighlight">\(x_1\)</span>-direction (i.e., the stream-wise direction) and similarly for <span class="math notranslate nohighlight">\(L_{22}^{x_2}\)</span> and <span class="math notranslate nohighlight">\(L_{33}^{x_3}\)</span>.</p>
+<p>In addition to the entries mentioned above, there are a total of three sub-dictionaries need to be specified in the <em>inflowProperties</em> file, i.e. <em>UDict</em>, <em>RDict</em> and <em>LDict</em>, which are responsible for the specifications of the mean velocity magnitude, the Reynolds stress tensor <span class="math notranslate nohighlight">\((R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})\)</span> and the integral length scales. For the <em>turbulentDFMInlet</em> and <em>turbulentSEMInlet</em> boundary conditions, the integral length scales should be defined in the form of (<span class="math notranslate nohighlight">\(L_{11}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{11}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{11}^{x_3}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_3}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_3})\)</span>. For the <em>turbulentATSMInlet</em> boundary condition, the integral length scales should be defined in the form of <span class="math notranslate nohighlight">\((L_{11}^{x_1} \ L_{22}^{x_2} \ L_{33}^{x_3})\)</span>. Note that <span class="math notranslate nohighlight">\(L_{11}^{x_1}\)</span> refers to the integral length scale obtained by integrating the two-point correlation function <span class="math notranslate nohighlight">\(R_{11}(\mathbf{x})\)</span> with respect to the local <span class="math notranslate nohighlight">\(x_1\)</span>-direction (i.e., the stream-wise direction) and similarly for <span class="math notranslate nohighlight">\(L_{22}^{x_2}\)</span> and <span class="math notranslate nohighlight">\(L_{33}^{x_3}\)</span>.</p>
 <p>Each sub-dictionary contains the entries required for the computation of the values of the corresponding variable on the inlet boundary which are almost identical to each other. In all sub-dictionaries mentioned above, the two basic entries need to be specified are the <em>referenceValue</em> and the <em>profile</em>. For the <em>UDict</em> sub-dictionary, the <em>referenceValue</em> entry requires a scalar value for input, while a symmetric tensor is required for the <em>RDict</em> sub-dictionary. Finally, the <em>referenceValue</em> entry of the <em>LDict</em> sub-dictionary demands a vector.</p>
 <p>On the other hand, the <em>profile</em> entry, as its name implies, defines the profile function of the corresponding variable on the inlet boundary. It takes a string variable for input, and there are only two the valid options are <em>uniform</em> and <em>exponential</em> at the present stage (expecting more in the coming future). When the <em>profile</em> entry takes <em>uniform</em>, the corresponding variable will be set universally to the reference value on the entire inflow patch; When the <em>profile</em> entry takes <em>exponential</em>, the corresponding variable will be therefore computed with an exponential function and additional entries entitled as <em>alpha</em>, <em>referenceAngl</em> and <em>referenceDist</em> should be defined as a supplement, see examples below.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>UDict
@@ -1152,9 +1159,9 @@ LDict
     alpha                   0.1;
 }
 
-IDict
+RDict
 {
-    referenceValue         (0.1  0  0  0.1  0  0.1);
+    referenceValue          (0.1  0  0  0.1  0  0.1);
     profile                 exponential;
     referenceAngl           0;
     referenceDist           1.0;
@@ -1166,15 +1173,15 @@ IDict
 <div class="math notranslate nohighlight" id="equation-exponentialforscalar">
 <span class="eqno">(2.1)<a class="headerlink" href="#equation-exponentialforscalar" title="Permalink to this equation">¶</a></span>\[\phi(\mathbf{x}) = \bar{\phi}\big(\frac{\mathbf{n}\cdot\mathbf{x}}{d_0}\big)^{\alpha}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\bar{\phi}\)</span> is the reference value (defined in the <em>referenceValue</em> entry), <span class="math notranslate nohighlight">\(\alpha\)</span> is the exponential coefficient  (defined by the <em>alpha</em> entry), and <span class="math notranslate nohighlight">\(d_0\)</span> is a reference distance (defined by the <em>referenceDist</em> entry). The symbol <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> is a direction vector (located on the inflow plane) to which the spatial coordinate <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> (defined in the local <span class="math notranslate nohighlight">\((x_1,x_2,x_3)\)</span> coordinate system) is projected. The direction of <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> is specified indirectly by defining the relative angle between the local <span class="math notranslate nohighlight">\(x_3\)</span>-axis and <span class="math notranslate nohighlight">\(\mathbf{n}\)</span>, and this angle (ranging from 0 to 180 degrees) is specified in the <em>referenceAngl</em> entry. This reason behind such an approach is obvious, the <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> can not be arbitrarily specified for it is located on the local <span class="math notranslate nohighlight">\(x_1x_2\)</span> (i.e., the inflow) plane. Also for obvious reasons, the reference values of the mean velocity magnitude and integral length scales should be larger than zero.</p>
-<p>Finally a symmetric tensor variable (e.g., the turbulent intensity) denoted by <span class="math notranslate nohighlight">\(\mathbf{\phi}\)</span> for demonstration, the corresponding exponential function writes</p>
+<p>Finally, a symmetric tensor variable (e.g., the turbulent intensity) denoted by <span class="math notranslate nohighlight">\(\mathbf{\phi}\)</span> for demonstration, the corresponding exponential function writes</p>
 <div class="math notranslate nohighlight" id="equation-exponentialfortensor">
 <span class="eqno">(2.2)<a class="headerlink" href="#equation-exponentialfortensor" title="Permalink to this equation">¶</a></span>\[\mathbf{\phi}(\mathbf{x}) = \sum_{\gamma=1}^s \bar{\phi}_{\gamma}\big(\frac{\mathbf{n}\cdot\mathbf{x}}{d_0}\big)^{\alpha_{\gamma}} \mathbf{M}_{\gamma},\]</div>
 <p>where <span class="math notranslate nohighlight">\(\bar{\phi}_{\gamma}\)</span> (<span class="math notranslate nohighlight">\(\gamma=1,2,3\)</span>) are principal values of the reference symmetric tensor <span class="math notranslate nohighlight">\(\bar{\mathbf{\phi}}\)</span> (i.e., the one defined in the <em>referenceValue</em> entry). <span class="math notranslate nohighlight">\(\mathbf{M}_{\gamma}\)</span> (<span class="math notranslate nohighlight">\(\gamma=1,2,3\)</span>) are tensors defined by</p>
 <div class="math notranslate nohighlight" id="equation-theory-turbulent-inflow-57">
 <span class="eqno">(2.3)<a class="headerlink" href="#equation-theory-turbulent-inflow-57" title="Permalink to this equation">¶</a></span>\[\mathbf{M}_{\gamma} = \mathbf{a}_{\gamma} \otimes \mathbf{a}_{\gamma}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{a}_{\gamma}\)</span> are the eigenvectors of <span class="math notranslate nohighlight">\(\bar{\mathbf{\phi}}\)</span>. Other symbols in <a class="reference internal" href="#equation-exponentialfortensor">(2.2)</a> follow from the notation in <a class="reference internal" href="#equation-exponentialforscalar">(2.1)</a>. Also note that in <a class="reference internal" href="#equation-exponentialfortensor">(2.2)</a>, the <em>alpha</em> entry requires a three-component vector, i.e., <span class="math notranslate nohighlight">\((\alpha_1 \ \alpha_2 \ \alpha_3)\)</span>, for input. The <em>referenceValue</em> requires a six-component vector, i.e., <span class="math notranslate nohighlight">\((\bar{\phi}_{11} \ \bar{\phi}_{21} \ \bar{\phi}_{31}\ \bar{\phi}_{22} \ \bar{\phi}_{32}\ \bar{\phi}_{33})\)</span>, for input, and for obvious reasons the <span class="math notranslate nohighlight">\(\bar{\phi}_{11}\)</span>, <span class="math notranslate nohighlight">\(\bar{\phi}_{22}\)</span> and <span class="math notranslate nohighlight">\(\bar{\phi}_{33}\)</span> components should be larger than zero.</p>
-<span id="table-tinf-theory-05"></span><table class="docutils align-center" id="id52">
-<caption><span class="caption-number">Table 2.5 </span><span class="caption-text">Entries listed in the inflowProperties file</span><a class="headerlink" href="#id52" title="Permalink to this table">¶</a></caption>
+<span id="table-tinf-theory-05"></span><table class="docutils align-center" id="id50">
+<caption><span class="caption-number">Table 2.5 </span><span class="caption-text">Entries listed in the inflowProperties file</span><a class="headerlink" href="#id50" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 17%" />
 <col style="width: 6%" />
@@ -1194,17 +1201,17 @@ IDict
 <td><p>UDict</p></td>
 <td><p>float</p></td>
 <td><p>&gt;0</p></td>
-<td><p>1</p></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td><p>LDict</p></td>
 <td><p>a vector of floats</p></td>
 <td><p>&gt;0</p></td>
-<td><p>(1 1 1)</p></td>
+<td></td>
 </tr>
 <tr class="row-even"><td><p>RDict</p></td>
 <td><p>a vector of floats</p></td>
 <td><p>positive definite</p></td>
-<td><p>(1 1 1 1 1 1)</p></td>
+<td></td>
 </tr>
 <tr class="row-odd"><td colspan="2"><p>profle</p></td>
 <td><p>string</p></td>
@@ -1221,6 +1228,11 @@ IDict
 <td><p>(0 180)</p></td>
 <td><p>0</p></td>
 </tr>
+<tr class="row-even"><td colspan="2"><p>Naxiss</p></td>
+<td><p>float</p></td>
+<td><p>(0 180)</p></td>
+<td><p>0</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1228,16 +1240,16 @@ IDict
 <div class="section" id="references">
 <h2><span class="section-number">2.4. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="bibtex-bibliography-theory/turbulent_inflow-0"><dl class="citation">
-<dt class="bibtex label" id="xie2008"><span class="brackets">1</span><span class="fn-backref">(<a href="#id18">1</a>,<a href="#id21">2</a>,<a href="#id23">3</a>,<a href="#id24">4</a>,<a href="#id37">5</a>)</span></dt>
+<dt class="bibtex label" id="xie2008"><span class="brackets">1</span><span class="fn-backref">(<a href="#id18">1</a>,<a href="#id19">2</a>,<a href="#id21">3</a>,<a href="#id22">4</a>,<a href="#id35">5</a>)</span></dt>
 <dd><p>Zheng-Tong Xie and Ian P Castro. Efficient generation of inflow conditions for large eddy simulation of street-scale flows. <em>Flow, turbulence and combustion</em>, 81(3):449–470, 2008.</p>
 </dd>
-<dt class="bibtex label" id="jarrin2006"><span class="brackets">2</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id25">2</a>,<a href="#id27">3</a>,<a href="#id38">4</a>,<a href="#id42">5</a>)</span></dt>
+<dt class="bibtex label" id="jarrin2006"><span class="brackets">2</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id23">2</a>,<a href="#id25">3</a>,<a href="#id36">4</a>,<a href="#id40">5</a>)</span></dt>
 <dd><p>Nicolas Jarrin, Sofiane Benhamadouche, Dominique Laurence, and Robert Prosser. A synthetic-eddy-method for generating inflow conditions for large-eddy simulations. <em>International Journal of Heat and Fluid Flow</em>, 27(4):585–593, 2006.</p>
 </dd>
-<dt class="bibtex label" id="poletto2013"><span class="brackets">3</span><span class="fn-backref">(<a href="#id26">1</a>,<a href="#id28">2</a>,<a href="#id29">3</a>,<a href="#id30">4</a>,<a href="#id39">5</a>,<a href="#id43">6</a>)</span></dt>
+<dt class="bibtex label" id="poletto2013"><span class="brackets">3</span><span class="fn-backref">(<a href="#id24">1</a>,<a href="#id26">2</a>,<a href="#id27">3</a>,<a href="#id28">4</a>,<a href="#id37">5</a>,<a href="#id41">6</a>)</span></dt>
 <dd><p>R Poletto, T Craft, and A Revell. A new divergence free synthetic eddy method for the reproduction of inlet flow conditions for les. <em>Flow, turbulence and combustion</em>, 91(3):519–539, 2013.</p>
 </dd>
-<dt class="bibtex label" id="kroger2018"><span class="brackets">4</span><span class="fn-backref">(<a href="#id31">1</a>,<a href="#id33">2</a>,<a href="#id34">3</a>,<a href="#id35">4</a>,<a href="#id40">5</a>,<a href="#id44">6</a>)</span></dt>
+<dt class="bibtex label" id="kroger2018"><span class="brackets">4</span><span class="fn-backref">(<a href="#id29">1</a>,<a href="#id31">2</a>,<a href="#id32">3</a>,<a href="#id33">4</a>,<a href="#id38">5</a>,<a href="#id42">6</a>)</span></dt>
 <dd><p>Hannes Kröger and Nikolai Kornev. Generation of divergence free synthetic inflow turbulence with arbitrary anisotropy. <em>Computers and Fluids</em>, 165:78–88, 2018.</p>
 </dd>
 <dt class="bibtex label" id="wu2017"><span class="brackets"><a class="fn-backref" href="#id1">5</a></span></dt>
@@ -1249,7 +1261,7 @@ IDict
 <dt class="bibtex label" id="hoshiya1972"><span class="brackets">7</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id6">2</a>)</span></dt>
 <dd><p>Masaru Hoshiya. Simulation of multi-correlated random processes and application to structural vibration problems. In <em>Proceedings of the Japan Society of Civil Engineers</em>, number 204, 121–128. Japan Society of Civil Engineers, 1972.</p>
 </dd>
-<dt class="bibtex label" id="klein2003"><span class="brackets">8</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id14">2</a>,<a href="#id17">3</a>,<a href="#id22">4</a>,<a href="#id36">5</a>,<a href="#id41">6</a>)</span></dt>
+<dt class="bibtex label" id="klein2003"><span class="brackets">8</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id14">2</a>,<a href="#id17">3</a>,<a href="#id20">4</a>,<a href="#id34">5</a>,<a href="#id39">6</a>)</span></dt>
 <dd><p>M. Klein, A. Sadiki, and J. Janicka. A digital filter based generation of inflow data for spatially developing direct numerical or large eddy simulations. <em>Journal of Computational Physics</em>, 186(2):652–665, 2003.</p>
 </dd>
 <dt class="bibtex label" id="shinozuka1972"><span class="brackets"><a class="fn-backref" href="#id7">9</a></span></dt>
@@ -1276,7 +1288,7 @@ IDict
 <dt class="bibtex label" id="kim2013"><span class="brackets"><a class="fn-backref" href="#id16">16</a></span></dt>
 <dd><p>Yusik Kim, Ian P Castro, and Zheng-Tong Xie. Divergence-free turbulence inflow conditions for large-eddy simulations with incompressible flow solvers. <em>Computers &amp; Fluids</em>, 84:56–68, 2013.</p>
 </dd>
-<dt class="bibtex label" id="kornev2007"><span class="brackets"><a class="fn-backref" href="#id32">17</a></span></dt>
+<dt class="bibtex label" id="kornev2007"><span class="brackets"><a class="fn-backref" href="#id30">17</a></span></dt>
 <dd><p>Kornev Nikolai and Hassel Egon. Synthesis of homogeneous anisotropic divergence-free turbulent fields with prescribed second-order statistics by vortex dipoles. <em>Physics of Fluids</em>, 19(6):68–101, 2007.</p>
 </dd>
 </dl>
@@ -1289,20 +1301,25 @@ IDict
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; <a href="../copyright.html">Copyright</a> SimCenter, University of California at Berkeley
+        &#169; <a href="../copyright.html">Copyright</a> SimCenter, University of California at Berkeley.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -1310,7 +1327,6 @@ IDict
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -1329,6 +1345,7 @@ IDict
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-158130480-6', 'auto');
+    
     ga('send', 'pageview');
     </script>
 
