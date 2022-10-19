@@ -1,42 +1,23 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>1. Building TInF &mdash; TInF Tool 0.2 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
+    <script src="_static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -45,29 +26,13 @@
     <link rel="prev" title="1. Theory" href="theory/turbulent_inflow.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> TInF Tool
-          
-
-          
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -75,19 +40,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">User Manual</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="acknowledgment.html">1. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">2. About TInF</a></li>
@@ -98,12 +52,12 @@
 <li class="toctree-l1"><a class="reference internal" href="bugs.html">7. Bugs &amp; Feauture Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="copyright.html">8. Copyright and License</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="theory/turbulent_inflow.html">1. Theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theory/turbulent_inflow.html#code-implementation">2. Code Implementation</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">1. Building TInF</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#install-external-software">1.1. Install External Software</a></li>
@@ -115,75 +69,34 @@
 <li class="toctree-l1"><a class="reference internal" href="codingStyle.html">3. Coding Style</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">TInF Tool</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
       <li><span class="section-number">1. </span>Building TInF</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="_sources/building.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="building-tinf">
-<span id="sec-tinf-building"></span><h1><span class="section-number">1. </span>Building TInF<a class="headerlink" href="#building-tinf" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="install-external-software">
-<h2><span class="section-number">1.1. </span>Install External Software<a class="headerlink" href="#install-external-software" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="building-tinf">
+<span id="sec-tinf-building"></span><h1><span class="section-number">1. </span>Building TInF<a class="headerlink" href="#building-tinf" title="Permalink to this heading"></a></h1>
+<section id="install-external-software">
+<h2><span class="section-number">1.1. </span>Install External Software<a class="headerlink" href="#install-external-software" title="Permalink to this heading"></a></h2>
 <p>Please note that in order to build and run the Turbulent Inflow Tool, your system must have installations of the following components:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -196,9 +109,9 @@
 <p class="admonition-title">Note</p>
 <p>The first open source release of <code class="docutils literal notranslate"><span class="pre">OpenFOAM</span></code> was in 2004. It was based on the <code class="docutils literal notranslate"><span class="pre">FOAM</span></code> code, which was originally developed by Henry Weller in 1989. As sometimes happens with open source software when commercial interests get involved, the code forked over time and a number of open source distributions from different entities are available. The two main distributions of the code come from the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a> and from <a class="reference external" href="https://openfoam.com">ESI OpenFOAM</a>. Currently Turbulence Inflow Tool compiles and runs with versions <strong>6</strong> and <strong>7</strong> of the code released by the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a>.</p>
 </div>
-</div>
-<div class="section" id="building-the-ui-from-source">
-<h2><span class="section-number">1.2. </span>Building the UI from Source<a class="headerlink" href="#building-the-ui-from-source" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="building-the-ui-from-source">
+<h2><span class="section-number">1.2. </span>Building the UI from Source<a class="headerlink" href="#building-the-ui-from-source" title="Permalink to this heading"></a></h2>
 <p>You must first obtain the source-code from <a class="reference external" href="https://github.com/NHERI-SimCenter/TurbulenceInflowTool">Turbulence Inflow Tool Github page</a> and then compile and build it using Qt’s qmake. This can be done in a command window on Windows or a terminal window on a Mac machine using the following commands:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NHERI-SimCenter/TurbulenceInflowTool
 git clone https://github.com/NHERI-SimCenter/SimCenterCommon
@@ -207,9 +120,9 @@ qmake TurbulenceInflowTool.pro
 make
 </pre></div>
 </div>
-</div>
-<div class="section" id="compiling-the-source-code-in-openfoam">
-<h2><span class="section-number">1.3. </span>Compiling the Source Code in OpenFOAM<a class="headerlink" href="#compiling-the-source-code-in-openfoam" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="compiling-the-source-code-in-openfoam">
+<h2><span class="section-number">1.3. </span>Compiling the Source Code in OpenFOAM<a class="headerlink" href="#compiling-the-source-code-in-openfoam" title="Permalink to this heading"></a></h2>
 <p>Download the source code of the turbulent velocity boundary conditions from</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://github.com/NHERI-SimCenter/TurbulenceInflowTool/tree/master/openFOAM_code
 </pre></div>
@@ -228,64 +141,46 @@ make
 </pre></div>
 </div>
 <p>After the compilation is successfully complete, a library file named <em>libturbulentInflow.so</em> will be generated in the directory $FOAM_USER_LIBBIN.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
           <footer>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; <a href="copyright.html">Copyright</a> SimCenter, University of California at Berkeley.
-
-    </p>
+    <p>&#169; <a href="copyright.html">Copyright</a> SimCenter, University of California at Berkeley.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
   </script>
-
-  
-  
-    
     <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158130480-6"></script>
     <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    ga('create', 'UA-158130480-6', 'auto');
-    
-    ga('send', 'pageview');
-    </script>
-
-    
-    
+      gtag('config', 'UA-158130480-6', {
+          'anonymize_ip': false,
+      });
+    </script>  
 
   <style>
          .wy-nav-content { max-width: none; }
