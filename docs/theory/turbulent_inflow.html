@@ -135,13 +135,16 @@
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathbf{u}'\)</span> should be spatially and temporally correlated.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathbf{u}'\)</span> needs to have prescribed Reynolds stresses tensor <span class="math notranslate nohighlight">\(R_{ij}(\mathbf{x}) = \langle u_i'u_j'\rangle(\mathbf{x})\)</span> where <span class="math notranslate nohighlight">\(u_i'\)</span> (<span class="math notranslate nohighlight">\(i=1,2,3\)</span>) is the <span class="math notranslate nohighlight">\(i\)</span>-th component of <span class="math notranslate nohighlight">\(\mathbf{u}'\)</span>  and the angles denote the time average.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathbf{u}'\)</span> needs to have prescribed integral length scales <span class="math notranslate nohighlight">\(L_{ij}(\mathbf{x},\mathbf{e})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{u}'\)</span> needs to have prescribed integral length scales, <span class="math notranslate nohighlight">\(L_{ij}^{\mathbf{e}}(\mathbf{x})\)</span>, with respect to a direction <span class="math notranslate nohighlight">\(\mathbf{e}\)</span> as</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-theory-turbulent-inflow-1">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-theory-turbulent-inflow-1" title="Permalink to this equation"></a></span>\[L_{ij}(\mathbf{x},\mathbf{e}) = \int_{0}^{\infty} \rho_{ij}(\mathbf{x},r\mathbf{e})\ \mathrm{d}r,\]</div>
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-theory-turbulent-inflow-1" title="Permalink to this equation"></a></span>\[L_{ij}^{\mathbf{e}}(\mathbf{x}) :=
+L_{ij}(\mathbf{x},\mathbf{e}) =
+\int_{0}^{\infty} \rho_{ij}(\mathbf{x},r\mathbf{e})\ \mathrm{d}r,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\rho_{ij}(\mathbf{x},\mathbf{e})\)</span> is the correlation function given by</p>
 <div class="math notranslate nohighlight" id="equation-theory-turbulent-inflow-2">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-theory-turbulent-inflow-2" title="Permalink to this equation"></a></span>\[\rho_{ij}(\mathbf{x},\mathbf{e}) = \frac{\langle u_i'(\mathbf{x},t)u_j'(\mathbf{x}+\mathbf{e},t)\rangle}{\langle u_i'(\mathbf{x},t)u_j'(\mathbf{x},t) \rangle}.\]</div>
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-theory-turbulent-inflow-2" title="Permalink to this equation"></a></span>\[\rho_{ij}^{\mathbf{e}}(\mathbf{x}) :=
+\rho_{ij}(\mathbf{x},\mathbf{e}) = \frac{\langle u_i'(\mathbf{x},t)u_j'(\mathbf{x}+\mathbf{e},t)\rangle}{\langle u_i'(\mathbf{x},t)u_j'(\mathbf{x},t) \rangle}.\]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\mathbf{u}\)</span> should fulfil the divergence free constraint <span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{u} = 0\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathbf{u}'\)</span> should have prescribed correlation functions <span class="math notranslate nohighlight">\(\rho_{ij}(\mathbf{x},\mathbf{e})\)</span> or spectra.</p></li>
@@ -932,26 +935,7 @@ boundaryField
 }
 </pre></div>
 </div>
-<p>It is noted that each element in <em>R</em> defines a six-component symmetric tensor of the form
-<span class="math notranslate nohighlight">\((R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})\)</span>.
-For the <em>turbulentDFMInlet</em> and <em>turbulentSEMInlet</em> boundary conditions, each element in <em>L</em> defines a
-general (i.e., nine-components) tensor to be entered as
-(<span class="math notranslate nohighlight">\(L_{11}\)</span></p>
-<blockquote>
-<div><p><span class="math notranslate nohighlight">\(L_{12}\)</span>
-<span class="math notranslate nohighlight">\(L_{13}\)</span>
-<span class="math notranslate nohighlight">\(L_{21}\)</span>
-<span class="math notranslate nohighlight">\(L_{22}\)</span>
-<span class="math notranslate nohighlight">\(L_{23}\)</span>
-<span class="math notranslate nohighlight">\(L_{31}\)</span>
-<span class="math notranslate nohighlight">\(L_{32}\)</span>
-<span class="math notranslate nohighlight">\(L_{33}\)</span>).</p>
-</div></blockquote>
-<p>For the <em>turbulentATSMInlet</em> boundary condition, each element in <em>L</em> defines a three-component vector of the form
-<span class="math notranslate nohighlight">\((L_{11} L_{22} L_{33})\)</span>.
-For the <em>turbulentDFSEMInlet</em> boundary condition, each element in <em>L</em> is a scalar. The main difficultly in specifying the entries <em>U</em>,
-<em>R</em> and <em>L</em> directly is to make sure that the sequence of the elements in each entry is properly sorted coping with the corresponding
-faces on the inflow plane.</p>
+<p>It is noted that each element in <em>R</em> defines a six-component symmetric tensor of the form <span class="math notranslate nohighlight">\((R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})\)</span>. For the <em>turbulentDFMInlet</em> and <em>turbulentSEMInlet</em> boundary conditions, each element in <em>L</em> defines a nine-component tensor of the form (<span class="math notranslate nohighlight">\(L_{11}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{11}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{11}^{x_3}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{22}^{x_3}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_1}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_2}\)</span> <span class="math notranslate nohighlight">\(L_{33}^{x_3})\)</span>. For the <em>turbulentATSMInlet</em> boundary condition, each element in <em>L</em> defines a three-component vector of the form <span class="math notranslate nohighlight">\((L_{11}^{x_1} L_{22}^{x_2} L_{33}^{x_3})\)</span>.  For the <em>turbulentDFSEMInlet</em> boundary condition, each element in <em>L</em> is a scalar. The main difficultly in specifying the entries <em>U</em>, <em>R</em> and <em>L</em> directly is to make sure that the sequence of the elements in each entry is properly sorted coping with the corresponding faces on the inflow plane.</p>
 </section>
 <section id="specification-via-interpolation">
 <h3>Specification via interpolation<a class="headerlink" href="#specification-via-interpolation" title="Permalink to this heading"></a></h3>
