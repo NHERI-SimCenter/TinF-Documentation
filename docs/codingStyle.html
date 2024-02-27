@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3. Coding Style &mdash; TInF Tool 0.2 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -30,11 +32,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> TInF Tool
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            TInF Tool
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -86,8 +92,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">3. </span>Coding Style</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>Coding Style</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/codingStyle.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -170,7 +176,7 @@ C++</p>
 <span class="cm">PROVIDED &quot;AS IS&quot;. REGENTS HAS NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, </span>
 <span class="cm">UPDATES, ENHANCEMENTS, OR MODIFICATIONS.</span>
 
-<span class="cm">*************************************************************************** */</span><span class="w"></span>
+<span class="cm">*************************************************************************** */</span>
 
 <span class="cm">/**</span>
 <span class="cm"> *  @author  fmckenna</span>
@@ -183,60 +189,60 @@ C++</p>
 <span class="cm"> * providing methods to read and write from/to JSON objects and signals the class can use to invoke slot methods</span>
 <span class="cm"> * in main window classes. This is to allow uniform handling of error messages in an application comprised of</span>
 <span class="cm"> * different widgets.</span>
-<span class="cm"> */</span><span class="w"></span>
+<span class="cm"> */</span>
 
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QWidget&gt;</span><span class="cp"></span>
-<span class="k">class</span><span class="w"> </span><span class="nc">QJsonObject</span><span class="p">;</span><span class="w"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;QWidget&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">QJsonObject</span><span class="p">;</span>
 
-<span class="k">class</span><span class="w"> </span><span class="nc">SimCenterWidget</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QWidget</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">Q_OBJECT</span><span class="w"></span>
-<span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">SimCenterWidget</span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">SimCenterWidget</span><span class="p">();</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">SimCenterWidget</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">QWidget</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Q_OBJECT</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="k">explicit</span><span class="w"> </span><span class="n">SimCenterWidget</span><span class="p">(</span><span class="n">QWidget</span><span class="w"> </span><span class="o">*</span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">SimCenterWidget</span><span class="p">();</span>
 <span class="w">    </span><span class="cm">/** </span>
 <span class="cm">     *   @brief outputToJSON method to write all objects data neeed to reconstruct object to JsonObject</span>
 <span class="cm">     *   @param rvObject the JSON object to be written to</span>
 <span class="cm">     *   @return bool - true for success, otherwise false</span>
 <span class="cm">     */</span><span class="w">  </span>
 
-<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">outputToJSON</span><span class="p">(</span><span class="n">QJsonObject</span><span class="w"> </span><span class="o">&amp;</span><span class="n">jsonObject</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">outputToJSON</span><span class="p">(</span><span class="n">QJsonObject</span><span class="w"> </span><span class="o">&amp;</span><span class="n">jsonObject</span><span class="p">);</span>
 <span class="w">    </span><span class="cm">/** </span>
 <span class="cm">     *   @brief inputFromJSON method to instantiate itself from a JSON object</span>
 <span class="cm">     *   @param jsonObject the JSON object contaiing data to instantiate the object</span>
 <span class="cm">     *   @return bool - true for success, otherwise false</span>
 <span class="cm">     */</span><span class="w">  </span>
-<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">inputFromJSON</span><span class="p">(</span><span class="n">QJsonObject</span><span class="w"> </span><span class="o">&amp;</span><span class="n">jsonObject</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">inputFromJSON</span><span class="p">(</span><span class="n">QJsonObject</span><span class="w"> </span><span class="o">&amp;</span><span class="n">jsonObject</span><span class="p">);</span>
 
-<span class="nl">signals</span><span class="p">:</span><span class="w"></span>
+<span class="nl">signals</span><span class="p">:</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     *   @brief sendFatalMessage signal to be emitted when object needs to shut program down</span>
 <span class="cm">     *   @param message to be returned</span>
 <span class="cm">     *   @return void</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendFatalMessage</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">message</span><span class="p">);</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendFatalMessage</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     *   @brief sendErrorMessage signal to be emitted when object needs to communicate error with user</span>
 <span class="cm">     *   @param message to be returned</span>
 <span class="cm">     *   @return void</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendErrorMessage</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">message</span><span class="p">);</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendErrorMessage</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     *   @brief sendStatusMessage signal to be emitted when object needs to communicate status with user</span>
 <span class="cm">     *   @param message to be passed</span>
 <span class="cm">     *   @return void</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendStatusMessage</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">message</span><span class="p">);</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">sendStatusMessage</span><span class="p">(</span><span class="n">QString</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
 
 
 
-<span class="k">public</span><span class="w"> </span><span class="n">slots</span><span class="o">:</span><span class="w"></span>
+<span class="k">public</span><span class="w"> </span><span class="n">slots</span><span class="o">:</span>
 
-<span class="k">private</span><span class="o">:</span><span class="w"></span>
-<span class="p">};</span><span class="w"></span>
+<span class="k">private</span><span class="o">:</span>
+<span class="p">};</span>
 
 <span class="cp">#endif </span><span class="c1">// SIMCENTER_WIDGET_H</span>
 </pre></div>
