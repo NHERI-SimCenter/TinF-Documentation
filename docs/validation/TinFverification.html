@@ -1,25 +1,23 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2. Verification of the Turbulence Inflow &mdash; TInF Tool 0.2 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=31b757c7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=10f1778b"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -56,7 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../userManual.html">4. User Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">5. TroubleShooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../copyright.html">8. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
@@ -96,13 +94,13 @@
            <div itemprop="articleBody">
              
   <section id="verification-of-the-turbulence-inflow">
-<span id="lblverificationturbulenceinflow"></span><h1><span class="section-number">2. </span>Verification of the Turbulence Inflow<a class="headerlink" href="#verification-of-the-turbulence-inflow" title="Permalink to this heading"></a></h1>
+<span id="lblverificationturbulenceinflow"></span><h1><span class="section-number">2. </span>Verification of the Turbulence Inflow<a class="headerlink" href="#verification-of-the-turbulence-inflow" title="Link to this heading"></a></h1>
 <p>The performance of the turbulence inflow tool in reproducing the statistical properties of the targeted turbulence can be verified by examining the synthetic velocity fluctuations generated at the inflow patch. To carry out such a verification, the first step is to record those velocity fluctuations during the simulations which can be achieved by adding the following lines in the <em>inflowProperties</em> file.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nOutputFace 6;
 outputFaceIndices (0 1 2 3 4 5);
 </pre></div>
 </div>
-<p>The two entries to be specified in the lines, i.e., <em>nOutputFace</em> and <em>outputFaceIndices</em>, denote the total number and the indices of the face elements (on the inflow patch) at which the time-histories of the velocities are to be recorded. Note that the components of <em>outputFaceIndices</em> should be integers lying between zero and the total number of the face elements on the inflow patch. Meanwhile, the number of the components of <em>outputFaceIndices</em> should equal to the value of <em>nOutputFace</em> which is an integer no larger than the total number of the face elements on the inflow patch. If the command lines shown above are added to the <em>inflowProperties</em> file, separate file named by the indices of the output face elements will be generated inside the <em>postProcessing</em> folder (created if not exists) at the root directory of the case project during the simulations. Those files (see below) contain not only the time-histories of the velocities but also the parameters defining the statistical properties of the targeted turbulence.</p>
+<p>The two entries to be specified in the lines, i.e., <em>nOutputFace</em> and <em>outputFaceIndices</em>, denote the total number and the indices of the face elements (on the inflow patch) at which the time-histories of the velocities are to be recorded. Note that the components of <em>outputFaceIndices</em> should be integers lying between zero and the total number of the face elements on the inflow patch. Meanwhile, the number of the components of <em>outputFaceIndices</em> should equal to the value of <em>nOutputFace</em> which is an integer no larger than the total number of the face elements on the inflow patch. If the command lines shown above are added to the <em>inflowProperties</em> file, a separate file named by the indices of the output face elements will be generated inside the <em>postProcessing</em> folder (created if not exist) at the root directory of the case project during the simulations. Those files (see below) contain not only the time histories of the velocities but also the parameters defining the statistical properties of the targeted turbulence.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># face index : 400
 # face centroid: (0.000000e+00 1.050000e+01 5.000000e-01)
 # mean velocity magnitude: 1.000000e+01
@@ -128,58 +126,58 @@ outputFaceIndices (0 1 2 3 4 5);
 ...
 </pre></div>
 </div>
-<p>When simulations are finished, one can easily verify if the synthetic turbulence meet the initial requirements by conducting a statistical analysis of the velocity fluctuations contained in the files. For simplicity, some Matlab codes for the statistical analysis of velocity fluctuations are provided. These codes are capable of computing the correlation coefficients and the velocity spectral functions of the synthetic turbulence at some specific face elements on the inflow patch and plotting the comparison between the synthetic profiles and the targeted ones. A number of examples are given below for demonstration.</p>
+<p>When simulations are finished, one can easily verify if the synthetic turbulence meets the initial requirements by conducting a statistical analysis of the velocity fluctuations contained in the files. For simplicity, some Matlab codes for the statistical analysis of velocity fluctuations are provided. These codes are capable of computing the correlation coefficients and the velocity spectral functions of the synthetic turbulence at some specific face elements on the inflow patch and plotting the comparison between the synthetic profiles and the targeted ones. Several examples are given below for demonstration.</p>
 <figure class="align-center" id="id1">
-<span id="figtinf1v"></span><img alt="../_images/TInF-V&amp;V-01.png" src="../_images/TInF-V&amp;V-01.png" />
+<span id="figtinf1v"></span><img alt="../_images/TInF-V%26V-01.png" src="../_images/TInF-V%26V-01.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.4 </span><span class="caption-text">DFM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span>: spectral functions</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 2.4 </span><span class="caption-text">DFM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span>: spectral functions</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id2">
-<span id="figtinf2v"></span><img alt="../_images/TInF-V&amp;V-02.png" src="../_images/TInF-V&amp;V-02.png" />
+<span id="figtinf2v"></span><img alt="../_images/TInF-V%26V-02.png" src="../_images/TInF-V%26V-02.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">DFM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span>: correlation functions</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">DFM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span>: correlation functions</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id3">
-<span id="figtinf3v"></span><img alt="../_images/TInF-V&amp;V-03.png" src="../_images/TInF-V&amp;V-03.png" />
+<span id="figtinf3v"></span><img alt="../_images/TInF-V%26V-03.png" src="../_images/TInF-V%26V-03.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.6 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a Gaussian function for eddy shape: spectral functions</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 2.6 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a Gaussian function for eddy shape: spectral functions</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <blockquote id="figtinf4v">
 <div><figure class="align-center" id="id4">
-<img alt="../_images/TInF-V&amp;V-04.png" src="../_images/TInF-V&amp;V-04.png" />
+<img alt="../_images/TInF-V%26V-04.png" src="../_images/TInF-V%26V-04.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a Gaussian function for eddy shape: correlation functions</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a Gaussian function for eddy shape: correlation functions</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 <figure class="align-center" id="id5">
-<span id="figtinf5v"></span><img alt="../_images/TInF-V&amp;V-05.png" src="../_images/TInF-V&amp;V-05.png" />
+<span id="figtinf5v"></span><img alt="../_images/TInF-V%26V-05.png" src="../_images/TInF-V%26V-05.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.8 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a tent function for eddy shape: spectral functions</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 2.8 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a tent function for eddy shape: spectral functions</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <blockquote id="figtinf6v">
 <div><figure class="align-center" id="id6">
-<img alt="../_images/TInF-V&amp;V-06.png" src="../_images/TInF-V&amp;V-06.png" />
+<img alt="../_images/TInF-V%26V-06.png" src="../_images/TInF-V%26V-06.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.9 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a tent function for eddy shape: correlation functions</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 2.9 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a tent function for eddy shape: correlation functions</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>
 <figure class="align-center" id="id7">
-<span id="figtinf7v"></span><img alt="../_images/TInF-V&amp;V-07.png" src="../_images/TInF-V&amp;V-07.png" />
+<span id="figtinf7v"></span><img alt="../_images/TInF-V%26V-07.png" src="../_images/TInF-V%26V-07.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.10 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a step function for eddy shape: spectral functions</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 2.10 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a step function for eddy shape: spectral functions</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <blockquote id="figtinf8v">
 <div><figure class="align-center" id="id8">
-<img alt="../_images/TInF-V&amp;V-08.png" src="../_images/TInF-V&amp;V-08.png" />
+<img alt="../_images/TInF-V%26V-08.png" src="../_images/TInF-V%26V-08.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a step function for eddy shape: correlation functions</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 2.11 </span><span class="caption-text">SEM with <span class="math notranslate nohighlight">\(U = 10\mathrm{m/s}\)</span>, <span class="math notranslate nohighlight">\(L_{11} = 1\mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(L_{22} = 0.75\mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(L_{33} = 0.5\mathrm{m}\)</span> and a step function for eddy shape: correlation functions</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </div></blockquote>

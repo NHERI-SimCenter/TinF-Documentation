@@ -1,24 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4. User Manual &mdash; TInF Tool 0.2 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=31b757c7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=10f1778b"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -55,7 +53,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. User Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">5. TroubleShooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bugs.html">7. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="copyright.html">8. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
@@ -95,22 +93,21 @@
            <div itemprop="articleBody">
              
   <section id="user-manual">
-<span id="sec-tinf-usage"></span><h1><span class="section-number">4. </span>User Manual<a class="headerlink" href="#user-manual" title="Permalink to this heading"></a></h1>
-<p>The workflow for adding parameters for various kinds of turbulence inflow models to your
-OpenFOAM model is as follows.</p>
+<span id="sec-tinf-usage"></span><h1><span class="section-number">4. </span>User Manual<a class="headerlink" href="#user-manual" title="Link to this heading"></a></h1>
+<p>The workflow for adding parameters for various kinds of turbulence inflow models to your OpenFOAM model is as follows. The current version of the TInf primarily works with OpenFOAM-10.</p>
 <dl>
 <dt><strong>Step 1: Source Selection</strong></dt><dd><p>Start the Turbulence Inflow Tool (TInF) and on the opening screen select the Source Tab
 (<a class="reference internal" href="#fig-tinf01"><span class="std std-numref">Fig. 4.1</span></a>, item 1).  Use the locate button (<a class="reference internal" href="#fig-tinf01"><span class="std std-numref">Fig. 4.1</span></a>, item 3) to navigate to your OpenFOAM input tree.</p>
 <figure class="align-default" id="id1">
 <span id="fig-tinf01"></span><img alt="_images/TInF-01.png" src="_images/TInF-01.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Start page - Source selection</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 4.1 </span><span class="caption-text">Start page - Source selection</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id2">
 <span id="fig-tinf02"></span><img alt="_images/TInF-02.png" src="_images/TInF-02.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Model tree selection (MacOS version shown, but similar on Windows systems)</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 4.2 </span><span class="caption-text">Model tree selection (MacOS version shown, but similar on Windows systems)</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p><a class="reference internal" href="#fig-tinf02"><span class="std std-numref">Fig. 4.2</span></a> shows a sample selection. The distribution comes with simple example input located
@@ -120,29 +117,29 @@ press open (<a class="reference internal" href="#fig-tinf02"><span class="std st
 <figure class="align-default" id="id3">
 <span id="fig-tinf04"></span><img alt="_images/TInF-04.png" src="_images/TInF-04.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Boundary patch selection</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 4.3 </span><span class="caption-text">Boundary patch selection</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The tool will display your selection (<a class="reference internal" href="#fig-tinf04"><span class="std std-numref">Fig. 4.3</span></a>, item 2), parse your boundary condition
 definition and provide you with a list of found boundary patches (<a class="reference internal" href="#fig-tinf04"><span class="std std-numref">Fig. 4.3</span></a>, item 3).  If your folder does not contain a parsable boundary patch definition, the folder will be displayed in red and no boundary patch selection will be offered.</p>
 <p>Use the pull-down menu to select the proper boundary patch to which the turbulence inflow conditions will be applied.</p>
 </dd>
-<dt><strong>Step 2: Parameter Definition</strong></dt><dd><p>In the Parameters tab (<a class="reference internal" href="#fig-tinf07"><span class="std std-numref">Fig. 4.4</span></a> and  <a class="reference internal" href="#fig-tinf08"><span class="std std-numref">Fig. 4.5</span></a>, item 1), first select the desired method.</p>
+<dt><strong>Step 2: Parameter Definition</strong></dt><dd><p>In the Parameters tab (<a class="reference internal" href="#fig-tinf07"><span class="std std-numref">Fig. 4.4</span></a> and <a class="reference internal" href="#fig-tinf08"><span class="std std-numref">Fig. 4.5</span></a>, item 1), first select the desired method.</p>
 <figure class="align-default" id="id4">
 <span id="fig-tinf07"></span><img alt="_images/TInF-07.png" src="_images/TInF-07.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Parameter selection tab – top of page</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Parameter selection tab – top of page</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id5">
 <span id="fig-tinf08"></span><img alt="_images/TInF-08.png" src="_images/TInF-08.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Parameter selection tab – bottom of page</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Parameter selection tab – bottom of page</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Based on the selected method, additional parameters will be collected.  The particular parameters and
-their meaning are discussed in detail in Chapter <a class="reference internal" href="theory/turbulent_inflow.html#sec-tinf-theory"><span class="std std-ref">Theory</span></a>.
-Depending on selected model and sub-options, as well as your screen size, you may need to scroll down to
+their meaning is discussed in detail in Chapter <a class="reference internal" href="theory/turbulent_inflow.html#sec-tinf-theory"><span class="std std-ref">Theory</span></a>.
+Depending on the selected model and sub-options, as well as your screen size, you may need to scroll down to
 get access to all parameter fields (<a class="reference internal" href="#fig-tinf07"><span class="std std-numref">Fig. 4.4</span></a> and  <a class="reference internal" href="#fig-tinf08"><span class="std std-numref">Fig. 4.5</span></a>, item 2).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -156,7 +153,7 @@ get access to all parameter fields (<a class="reference internal" href="#fig-tin
 <figure class="align-default" id="id6">
 <span id="fig-tinf09"></span><img alt="_images/TInF-09.png" src="_images/TInF-09.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 4.6 </span><span class="caption-text">Export panel</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 4.6 </span><span class="caption-text">Export panel</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>In the Export panel (<a class="reference internal" href="#fig-tinf09"><span class="std std-numref">Fig. 4.6</span></a>, item 1), verify that the correct boundary patch is selected

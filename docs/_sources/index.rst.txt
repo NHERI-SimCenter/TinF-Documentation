@@ -5,7 +5,7 @@ Turbulence Inflow Tool
 
 .. only:: html
 
-   **Jiawei Wan** [1]_, **Peter Mackenzie-Helnwein** [2]_
+   **Jiawei Wan** [1]_, **Abiy Melaku** [2]_, **Peter Mackenzie-Helnwein** [3]_
 
    The Turbulence Inflow Tool (TInF) is designed to collect all required properties and parameters
    needed for various turbulence inflow models in OpenFOAM, and to augment an existing wind-around-a-building model by adding the necessary sections to respective parameter definition files.
@@ -24,7 +24,7 @@ Turbulence Inflow Tool
 
 .. note::
 
-   The first open source release of ``OpenFOAM`` was in 2004. It was based on the ``FOAM`` code, which was originally developed by Henry Weller in 1989. As sometimes happens with open source software when commercial interests get involved, the code forked over time and a number of open source distributions from different entities are available. The two main distributions of the code come from the |openfoam.org| and from |openfoam.com|. Currently |app| compiles and runs with versions **6** and **7** of the code released by the |openfoam.org|.
+   The first open-source release of ``OpenFOAM`` was in 2004. It was based on the ``FOAM`` code, which was originally developed by Henry Weller in 1989. As sometimes happens with open source software when commercial interests get involved, the code forked over time and a number of open source distributions from different entities are available. The two main distributions of the code come from the |openfoam.org| and from |openfoam.com|. Currently |app| compiles and runs with versions **6** and **7** of the code released by the |openfoam.org|.
 
 .. _lblUserManual:
 
@@ -77,4 +77,5 @@ Contact
 Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna AT berkeley.edu
 
 .. [1] University of Notre Dame
-.. [2] University of Washington
+.. [2] University California Berkeley
+.. [3] University of Washington

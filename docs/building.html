@@ -1,24 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1. Building TInF &mdash; TInF Tool 0.2 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=31b757c7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=10f1778b"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -55,7 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="userManual.html">4. User Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">5. TroubleShooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bugs.html">7. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="copyright.html">8. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
@@ -100,24 +98,24 @@
            <div itemprop="articleBody">
              
   <section id="building-tinf">
-<span id="sec-tinf-building"></span><h1><span class="section-number">1. </span>Building TInF<a class="headerlink" href="#building-tinf" title="Permalink to this heading"></a></h1>
+<span id="sec-tinf-building"></span><h1><span class="section-number">1. </span>Building TInF<a class="headerlink" href="#building-tinf" title="Link to this heading"></a></h1>
 <section id="install-external-software">
-<h2><span class="section-number">1.1. </span>Install External Software<a class="headerlink" href="#install-external-software" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">1.1. </span>Install External Software<a class="headerlink" href="#install-external-software" title="Link to this heading"></a></h2>
 <p>Please note that in order to build and run the Turbulent Inflow Tool, your system must have installations of the following components:</p>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Install a modern C++ compiler that is compliant with modern C++ standards (preferably C++17).</p></li>
 <li><p>Install the <a class="reference external" href="https://www.qt.io/download/">Qt framework</a>. Qt is free for open source developers. Qt version 5.10 or later is required and version 5.12 or later is recommended.</p></li>
-<li><p>Install OpenFOAM (v6 or v7) from the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a></p></li>
+<li><p>Install OpenFOAM (v10) from the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a></p></li>
 </ol>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The first open source release of <code class="docutils literal notranslate"><span class="pre">OpenFOAM</span></code> was in 2004. It was based on the <code class="docutils literal notranslate"><span class="pre">FOAM</span></code> code, which was originally developed by Henry Weller in 1989. As sometimes happens with open source software when commercial interests get involved, the code forked over time and a number of open source distributions from different entities are available. The two main distributions of the code come from the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a> and from <a class="reference external" href="https://openfoam.com">ESI OpenFOAM</a>. Currently Turbulence Inflow Tool compiles and runs with versions <strong>6</strong> and <strong>7</strong> of the code released by the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a>.</p>
+<p>The first open source release of <code class="docutils literal notranslate"><span class="pre">OpenFOAM</span></code> was in 2004. It was based on the <code class="docutils literal notranslate"><span class="pre">FOAM</span></code> code, which was originally developed by Henry Weller in 1989. As sometimes happens with open source software when commercial interests get involved, the code forked over time and a number of open source distributions from different entities are available. The two main distributions of the code come from the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a> and from <a class="reference external" href="https://openfoam.com">ESI OpenFOAM</a>. Currently Turbulence Inflow Tool compiles and runs primarily with <strong>10</strong> of the code released by the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a>.</p>
 </div>
 </section>
 <section id="building-the-ui-from-source">
-<h2><span class="section-number">1.2. </span>Building the UI from Source<a class="headerlink" href="#building-the-ui-from-source" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">1.2. </span>Building the UI from Source<a class="headerlink" href="#building-the-ui-from-source" title="Link to this heading"></a></h2>
 <p>You must first obtain the source-code from <a class="reference external" href="https://github.com/NHERI-SimCenter/TurbulenceInflowTool">Turbulence Inflow Tool Github page</a> and then compile and build it using Qt’s qmake. This can be done in a command window on Windows or a terminal window on a Mac machine using the following commands:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NHERI-SimCenter/TurbulenceInflowTool
 git clone https://github.com/NHERI-SimCenter/SimCenterCommon
@@ -128,12 +126,12 @@ make
 </div>
 </section>
 <section id="compiling-the-source-code-in-openfoam">
-<h2><span class="section-number">1.3. </span>Compiling the Source Code in OpenFOAM<a class="headerlink" href="#compiling-the-source-code-in-openfoam" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">1.3. </span>Compiling the Source Code in OpenFOAM<a class="headerlink" href="#compiling-the-source-code-in-openfoam" title="Link to this heading"></a></h2>
 <p>Download the source code of the turbulent velocity boundary conditions from</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://github.com/NHERI-SimCenter/TurbulenceInflowTool/tree/master/openFOAM_code
 </pre></div>
 </div>
-<p>The source code files are contained in a directory named <em>turbulentInflow</em>. Note that the code is provided for OpenFOAM version 6 and 7, and is slightly different in this two versions. Please choose the correct package to download according the version of OpenFOAM you have installed on your computer.</p>
+<p>The source code files are contained in a directory named <em>turbulentInflow</em>. Note that the code is provided for OpenFOAM version 6, 7, 10, 11 and is slightly different in each versions. Version 10 has been tested rigorously compared to the others. Please choose the correct package to download according the version of OpenFOAM you have installed on your computer. For all the inflow boundary condition used in WE-UQ, OpenFOAM-10 is used.</p>
 <p>Create a project directory by typing the following script in a terminal prompt:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ mkdir -p $FOAM_RUN
 </pre></div>

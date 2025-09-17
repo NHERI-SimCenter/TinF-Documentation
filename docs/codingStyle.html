@@ -1,24 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3. Coding Style &mdash; TInF Tool 0.2 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=31b757c7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=10f1778b"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -54,7 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="userManual.html">4. User Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">5. TroubleShooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bugs.html">7. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="copyright.html">8. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
@@ -104,36 +102,36 @@
            <div itemprop="articleBody">
              
   <section id="coding-style">
-<span id="lblcodingstyle"></span><h1><span class="section-number">3. </span>Coding Style<a class="headerlink" href="#coding-style" title="Permalink to this heading"></a></h1>
-<p>The SimCenter frontend applications are written in <strong>C++</strong>. The applications that run in the backend are written in a mixture of langauages: <strong>Python</strong>, <strong>C</strong>, and <strong>C++</strong>. The SimCenter strives to use a common style across the applications. This section outlines that style. Consistency is the most important aspect of style. The second most important aspect is following a style that the average programmer is used to reading. Not all code will follow th guide,</p>
+<span id="lblcodingstyle"></span><h1><span class="section-number">3. </span>Coding Style<a class="headerlink" href="#coding-style" title="Link to this heading"></a></h1>
+<p>The SimCenter frontend applications are written in <strong>C++</strong>. The applications that run in the backend are written in a mixture of languages: <strong>Python</strong>, <strong>C</strong>, and <strong>C++</strong>. The SimCenter strives to use a common style across the applications. This section outlines that style. Consistency is the most important aspect of style. The second most important aspect is following a style that the average programmer is used to reading. Not all codes will follow the guidelines.</p>
 <section id="python-style">
-<h2><span class="section-number">3.1. </span>Python Style<a class="headerlink" href="#python-style" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">3.1. </span>Python Style<a class="headerlink" href="#python-style" title="Link to this heading"></a></h2>
 <p>For code written in Python SimCenter programmers follow the widely used
 <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">Guide PEP 8</a></p>
 </section>
 <section id="c-c-style">
-<h2><span class="section-number">3.2. </span>C/C++ Style<a class="headerlink" href="#c-c-style" title="Permalink to this heading"></a></h2>
-<p>Unlike Python, C/C++ do not have a widely accepted style guideline. Some guidlines of note include the <a class="reference external" href="https://google.github.io/styleguide/cppguide.html">Google Style</a>, the <a class="reference external" href="http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html">C++ Core Guidelines</a> (edited by Stroustrup and Sutter), and an older
+<h2><span class="section-number">3.2. </span>C/C++ Style<a class="headerlink" href="#c-c-style" title="Link to this heading"></a></h2>
+<p>Unlike Python, C/C++ do not have a widely accepted style guideline. Some guidelines of note include the <a class="reference external" href="https://google.github.io/styleguide/cppguide.html">Google Style</a>, the <a class="reference external" href="http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html">C++ Core Guidelines</a> (edited by Stroustrup and Sutter), and an older
 C++</p>
 <section id="comments">
-<h3><span class="section-number">3.2.1. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">3.2.1. </span>Comments<a class="headerlink" href="#comments" title="Link to this heading"></a></h3>
 <p>It goes without saying that you must use them. Try to use <code class="code docutils literal notranslate"><span class="pre">//</span></code> as opposed to <code class="code docutils literal notranslate"><span class="pre">/*</span> <span class="pre">*/</span></code>, as it makes it easier to comment out a block of code when debugging.</p>
 </section>
 <section id="naming-conventions">
-<h3><span class="section-number">3.2.2. </span>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this heading"></a></h3>
-<p>All names should be meaningful and Follow a camel case approach. For classes the names start with an uppercase letter, all class methods, functions, and variables shall start with a lowercase letter. The exception is consstant variables, which should be all uppercase, e.g. <code class="code docutils literal notranslate"><span class="pre">const</span> <span class="pre">double</span> <span class="pre">PI=3.14159265358979323;</span></code></p>
+<h3><span class="section-number">3.2.2. </span>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Link to this heading"></a></h3>
+<p>All names should be meaningful and Follow a camel-case approach. For classes the names start with an uppercase letter, all class methods, functions, and variables shall start with a lowercase letter. The exception is constant variables, which should be all uppercase, e.g. <code class="code docutils literal notranslate"><span class="pre">const</span> <span class="pre">double</span> <span class="pre">PI=3.14159265358979323;</span></code></p>
 </section>
 <section id="files">
-<h3><span class="section-number">3.2.3. </span>Files<a class="headerlink" href="#files" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">3.2.3. </span>Files<a class="headerlink" href="#files" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Use a <strong>.cpp</strong> extension for code files and a <strong>.h</strong> extension for interface files.</p></li>
 <li><p>All files should include at the start the <a class="reference internal" href="copyright.html#lbllicense"><span class="std std-ref">Copyright and License</span></a></p></li>
-<li><p>All file should contain some comments about what the file contains, and the name of the developers who worked substantially on the code.</p></li>
-<li><p>Use indendation to make the code easier to read, the <strong>Qt</strong> editor has a nice feature that will auto indent code for you.</p></li>
+<li><p>All files should contain some comments about what the file contains, and the name of the developers who worked substantially on the code.</p></li>
+<li><p>Use indentation to make the code easier to read, the <strong>Qt</strong> editor has a nice feature that will auto-indent code for you.</p></li>
 <li><p>In addition, when writing h header files:
-#. Never ever ever use <strong>using namespace</strong> in a header.
+#. Never use <strong>using namespace</strong> in a header.
 #. All header files should additionally include documentation as the the purpose of the class and the methods. The returns and args to the functions should be documented.
-#. Header files <strong>MUST</strong> contain a distinctly-named include guard to avoid problems with including the same header multiple times and to prevent conflicts with headers from other projects.
+#. Header files <strong>MUST</strong> contain a distinctly named include guard to avoid problems with including the same header multiple times and to prevent conflicts with headers from other projects.
 #. The comments should be in a <a class="reference external" href="http://www.doxygen.nl/manual/docblocks.html">Doxygen format</a>.
 #. Assign default values with = or {}, a C++11 feature.
 #. All variables defined in the header must be private.</p></li>
@@ -249,10 +247,10 @@ C++</p>
 </div>
 </section>
 <section id="variables">
-<h3><span class="section-number">3.2.4. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">3.2.4. </span>Variables<a class="headerlink" href="#variables" title="Link to this heading"></a></h3>
 <ol class="arabic simple">
 <li><p>Initialize all variables</p></li>
-<li><p>When initilializing float and double variables with values that could be read as integer always include a <strong>.0</strong>, i.e. <code class="code docutils literal notranslate"><span class="pre">double</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">1.0;</span></code></p></li>
+<li><p>When initializing float and double variables with values that could be read as integers always include a <strong>.0</strong>, i.e. <code class="code docutils literal notranslate"><span class="pre">double</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">1.0;</span></code></p></li>
 </ol>
 </section>
 </section>

@@ -1,31 +1,29 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>6. Examples &mdash; TInF Tool 0.2 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=31b757c7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=10f1778b"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="copyright" title="Copyright" href="../copyright.html" />
-    <link rel="next" title="7. Bugs &amp; Feauture Requests" href="../bugs.html" />
+    <link rel="next" title="7. Bugs &amp; Feature Requests" href="../bugs.html" />
     <link rel="prev" title="5. TroubleShooting" href="../troubleshooting.html" /> 
 </head>
 
@@ -63,7 +61,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../copyright.html">8. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
@@ -103,52 +101,49 @@
            <div itemprop="articleBody">
              
   <section id="examples">
-<h1><span class="section-number">6. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">6. </span>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h1>
 <section id="fully-developed-channel-flow">
-<h2><span class="section-number">6.1. </span>Fully Developed Channel Flow<a class="headerlink" href="#fully-developed-channel-flow" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">6.1. </span>Fully Developed Channel Flow<a class="headerlink" href="#fully-developed-channel-flow" title="Link to this heading"></a></h2>
 <p>Fully developed turbulent channel flow is one of the most studied flow problem of engineering interest in computational fluid dynamics (CFD) community. The flow problem has a simple three dimensional geometry comprising two flat walls at the top and bottom (see <a class="reference internal" href="#fig-tinf01ne"><span class="std std-numref">Fig. 6.1</span></a>), which makes the channel flow an ideal test case for investigating the near wall behavior of turbulence. When the flow is fully developed in the channel, there is a constant mean pressure gradient in the stream-wise direction which is directly related to the friction velocity <span class="math notranslate nohighlight">\(u_{\tau}\)</span> and the channel half width <span class="math notranslate nohighlight">\(\delta\)</span> in terms of the relation</p>
 <div class="math notranslate nohighlight" id="equation-examples-examples-0">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-examples-examples-0" title="Permalink to this equation"></a></span>\[\frac{\mathrm{d}p}{\mathrm{d}x} = \frac{u_{\tau}^2}{2\delta}\]</div>
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-examples-examples-0" title="Link to this equation"></a></span>\[\frac{\mathrm{d}p}{\mathrm{d}x} = \frac{u_{\tau}^2}{2\delta}\]</div>
 <p>Due to the homogeneity of turbulent channel flows in the stream-wise and span-wise directions, periodic boundary conditions can be applied to the boundaries normal to these two directions. In a standard case where periodic boundary conditions are employed, the simulation generates its own turbulence and can therefore be considered as a benchmark to assess simulations with synthetic turbulence.</p>
 <figure class="align-center" id="id10">
-<span id="fig-tinf01ne"></span><a class="reference internal image-reference" href="../_images/TInF-NE-01.png"><img alt="../_images/TInF-NE-01.png" src="../_images/TInF-NE-01.png" style="width: 350px;" /></a>
+<span id="fig-tinf01ne"></span><a class="reference internal image-reference" href="../_images/TInF-NE-01.png"><img alt="../_images/TInF-NE-01.png" src="../_images/TInF-NE-01.png" style="width: 350px;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Sketch of a channel flow and the coordinate system adopted</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.1 </span><span class="caption-text">Sketch of a channel flow and the coordinate system adopted</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The turbulence in the fully developed channel flow shows different levels of anisotropy with the varying wall distance, and isotropy is approximately recovered only in a small region adjacent to the mid plane of the channel. Compared to more complex flow problems, where the downstream evolution of the inflow turbulence might be quickly dominated by complicated geometries or other forcing factors, the turbulence in the channel is only induced by the presence of the flat wall and develops quite slowly. These circumstances make the channel flow a challenging test case for turbulence inflow generation, because impurities in the generated turbulence are very clearly identified.</p>
 <p>Over the past two decades, direct numerical simulation (DNS) and large eddy simulation (LES) have been a valuable tool for the investigation of turbulent channel flows with periodic boundaries. A variety of studies of such simulations have yielded insights into both the statistical and structural characteristics of wall-bounded turbulence. <a class="reference internal" href="#fig-tinf02ne"><span class="std std-numref">Fig. 6.2</span></a> and <a class="reference internal" href="#fig-tinf03ne"><span class="std std-numref">Fig. 6.3</span></a> demonstrate the mean velocity and Reynolds stress tensor extracted from a LES simulation for the channel flow (using the tutorial case <em>channel395</em> available in the OpenFOAM) at the friction Reynolds number <span class="math notranslate nohighlight">\(\mathrm{Re}_{\tau} = 395\)</span> defined as</p>
 <div class="math notranslate nohighlight" id="equation-examples-examples-1">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-examples-examples-1" title="Permalink to this equation"></a></span>\[\mathrm{Re}_{\tau} = \frac{\delta u_{\tau}}{\nu}\]</div>
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-examples-examples-1" title="Link to this equation"></a></span>\[\mathrm{Re}_{\tau} = \frac{\delta u_{\tau}}{\nu}\]</div>
 <p>Based on the data demonstrated in <a class="reference internal" href="#fig-tinf02ne"><span class="std std-numref">Fig. 6.2</span></a> and <a class="reference internal" href="#fig-tinf03ne"><span class="std std-numref">Fig. 6.3</span></a>, the application of the turbulence inflow tool to generate inlet conditions for large eddy simulation (LES) of turbulent plane channel flow at <span class="math notranslate nohighlight">\(\mathrm{Re}_{\tau} = 395\)</span> will be presented.</p>
 <figure class="align-center" id="id11">
 <span id="fig-tinf02ne"></span><img alt="../_images/TInF-NE-02.png" src="../_images/TInF-NE-02.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Mean velocity profile for the channel flow at <span class="math notranslate nohighlight">\(\mathrm{Re}_{\tau} = 395\)</span></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.2 </span><span class="caption-text">Mean velocity profile for the channel flow at <span class="math notranslate nohighlight">\(\mathrm{Re}_{\tau} = 395\)</span></span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id12">
 <span id="fig-tinf03ne"></span><img alt="../_images/TInF-NE-03.png" src="../_images/TInF-NE-03.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">Reynolds stress profile for the channel flow at <span class="math notranslate nohighlight">\(\mathrm{Re}_{\tau} = 395\)</span></span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.3 </span><span class="caption-text">Reynolds stress profile for the channel flow at <span class="math notranslate nohighlight">\(\mathrm{Re}_{\tau} = 395\)</span></span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <section id="numerical-setup">
-<h3><span class="section-number">6.1.1. </span>Numerical Setup<a class="headerlink" href="#numerical-setup" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">6.1.1. </span>Numerical Setup<a class="headerlink" href="#numerical-setup" title="Link to this heading"></a></h3>
 <p>The dimensions of the computational domain are chosen as <span class="math notranslate nohighlight">\(2\pi\delta\times 2\delta \times \pi\delta\)</span> in the stream-wise, wall-normal and span-wise directions, respectively. This is sufficient to resolve the largest structures of the flow at <span class="math notranslate nohighlight">\(\mathrm{Re}_{\tau} = 395\)</span>. In the meantime, the number of grid nodes are chosen as <span class="math notranslate nohighlight">\(100 \times 60 \times 60\)</span> in the stream-wise, wall-normal and span-wise directions, respectively. The grid nodes are uniformly distributed in the stream-wise and span-wise directions, whereas an exponential profile is employed to determine the grid spacing in the wall-normal direction. Periodic boundary conditions were applied in the span-wise direction, whereas no-slip boundary conditions were imposed at the walls. For all simulations, the time step <span class="math notranslate nohighlight">\(\Delta t\)</span> was adjusted so that the maximum Courant-Friedrichs-Lewy (CFL) number remains lower than unity during all simulations. The <span class="math notranslate nohighlight">\(k\)</span>-equation model with Van Driest damping at the wall is used for LES. The different synthetic turbulence methods investigated are summarized in <a class="reference internal" href="#table-tinf01-ne"><span class="std std-numref">Table 6.1</span></a>.</p>
 <figure class="align-center" id="id13">
-<a class="reference internal image-reference" href="../_images/TInF-NE-00.gif"><img alt="../_images/TInF-NE-00.gif" src="../_images/TInF-NE-00.gif" style="width: 350px;" /></a>
+<a class="reference internal image-reference" href="../_images/TInF-NE-00.gif"><img alt="../_images/TInF-NE-00.gif" src="../_images/TInF-NE-00.gif" style="width: 350px;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">A velocity contour of the channel flow at <span class="math notranslate nohighlight">\(\mathrm{Re}_{\tau} = 395\)</span></span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.4 </span><span class="caption-text">A velocity contour of the channel flow at <span class="math notranslate nohighlight">\(\mathrm{Re}_{\tau} = 395\)</span></span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <span id="table-tinf01-ne"></span><table class="docutils align-center" id="id15">
-<caption><span class="caption-number">Table 6.1 </span><span class="caption-text">Basic numerical setup.</span><a class="headerlink" href="#id15" title="Permalink to this table"></a></caption>
-<colgroup>
-<col style="width: 4%" />
-<col style="width: 22%" />
-<col style="width: 74%" />
-</colgroup>
+<caption><span class="caption-number">Table 6.1 </span><span class="caption-text">Basic numerical setup.</span><a class="headerlink" href="#id15" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Run</p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(\mathrm{Re}_{\tau}\)</span></p></th>
@@ -235,80 +230,84 @@
 </div>
 </section>
 <section id="simulation-results">
-<h3><span class="section-number">6.1.2. </span>Simulation Results<a class="headerlink" href="#simulation-results" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">6.1.2. </span>Simulation Results<a class="headerlink" href="#simulation-results" title="Link to this heading"></a></h3>
 <p>A first impression of the turbulence in the flow is given in <a class="reference internal" href="#fig-tinf04ne"><span class="std std-numref">Fig. 6.6</span></a> ~ <a class="reference internal" href="#fig-tinf07ne"><span class="std std-numref">Fig. 6.9</span></a>. It shows the contour-surfaces of the <span class="math notranslate nohighlight">\(\lambda_2\)</span> vortex identification criterion. The vortices from the simulation with ATSM-R and ATSM_L are shown in Fig. <a class="reference internal" href="#fig-tinf06ne"><span class="std std-numref">Fig. 6.8</span></a> and <a class="reference internal" href="#fig-tinf07ne"><span class="std std-numref">Fig. 6.9</span></a>, respectively. The vortex content is very rich compared to all other simulations, especially in the vicinity of the inlet (on the left side of the images). A large number of vortices is visible there, which also extend relatively far from the wall. The simulations with SEM or DFM look more sparsely populated by vortices. Especially for the simulation with DFM, a very clear decay of vortex density after the inlet is visible.</p>
 <figure class="align-center" id="id16">
-<span id="fig-tinf04ne"></span><a class="reference internal image-reference" href="../_images/TInF-NE-04.png"><img alt="../_images/TInF-NE-04.png" src="../_images/TInF-NE-04.png" style="width: 500px;" /></a>
+<span id="fig-tinf04ne"></span><a class="reference internal image-reference" href="../_images/TInF-NE-04.png"><img alt="../_images/TInF-NE-04.png" src="../_images/TInF-NE-04.png" style="width: 500px;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.6 </span><span class="caption-text">Visualization of turbulent vortices in the channel flow simulation with DFM by contour-surfaces of <span class="math notranslate nohighlight">\(\lambda_2\)</span></span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.6 </span><span class="caption-text">Visualization of turbulent vortices in the channel flow simulation with DFM by contour-surfaces of <span class="math notranslate nohighlight">\(\lambda_2\)</span></span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id17">
-<span id="fig-tinf05ne"></span><a class="reference internal image-reference" href="../_images/TInF-NE-05.png"><img alt="../_images/TInF-NE-05.png" src="../_images/TInF-NE-05.png" style="width: 500px;" /></a>
+<span id="fig-tinf05ne"></span><a class="reference internal image-reference" href="../_images/TInF-NE-05.png"><img alt="../_images/TInF-NE-05.png" src="../_images/TInF-NE-05.png" style="width: 500px;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.7 </span><span class="caption-text">Visualization of turbulent vortices in the channel flow simulation with SEM by contour-surfaces of <span class="math notranslate nohighlight">\(\lambda_2\)</span></span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.7 </span><span class="caption-text">Visualization of turbulent vortices in the channel flow simulation with SEM by contour-surfaces of <span class="math notranslate nohighlight">\(\lambda_2\)</span></span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id18">
-<span id="fig-tinf06ne"></span><a class="reference internal image-reference" href="../_images/TInF-NE-06.png"><img alt="../_images/TInF-NE-06.png" src="../_images/TInF-NE-06.png" style="width: 500px;" /></a>
+<span id="fig-tinf06ne"></span><a class="reference internal image-reference" href="../_images/TInF-NE-06.png"><img alt="../_images/TInF-NE-06.png" src="../_images/TInF-NE-06.png" style="width: 500px;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.8 </span><span class="caption-text">Visualization of turbulent vortices in the channel flow simulation with ATSM_R by contour-surfaces of <span class="math notranslate nohighlight">\(\lambda_2\)</span></span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.8 </span><span class="caption-text">Visualization of turbulent vortices in the channel flow simulation with ATSM_R by contour-surfaces of <span class="math notranslate nohighlight">\(\lambda_2\)</span></span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id19">
-<span id="fig-tinf07ne"></span><a class="reference internal image-reference" href="../_images/TInF-NE-07.png"><img alt="../_images/TInF-NE-07.png" src="../_images/TInF-NE-07.png" style="width: 500px;" /></a>
+<span id="fig-tinf07ne"></span><a class="reference internal image-reference" href="../_images/TInF-NE-07.png"><img alt="../_images/TInF-NE-07.png" src="../_images/TInF-NE-07.png" style="width: 500px;" />
+</a>
 <figcaption>
-<p><span class="caption-number">Fig. 6.9 </span><span class="caption-text">Visualization of turbulent vortices in the channel flow simulation with ATSM-L by contour-surfaces of <span class="math notranslate nohighlight">\(\lambda_2\)</span></span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.9 </span><span class="caption-text">Visualization of turbulent vortices in the channel flow simulation with ATSM-L by contour-surfaces of <span class="math notranslate nohighlight">\(\lambda_2\)</span></span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>In <a class="reference internal" href="#fig-tinf08ne"><span class="std std-numref">Fig. 6.10</span></a> ~ <a class="reference internal" href="#fig-tinf11ne"><span class="std std-numref">Fig. 6.13</span></a>, the pressure fluctuations in the channel flow simulations are plotted vs. the axial distance to the inlet. The SEM, which does not obey continuity, produces very intense pressure noise near the inlet. The peak amplitude of its pressure fluctuations is much larger than the amplitude of the natural pressure fluctuations in the channel. In comparsion, the DFSEM and ATSM formulations produce a pressure noise level which is much lower.</p>
 <figure class="align-center" id="id20">
 <span id="fig-tinf08ne"></span><img alt="../_images/TInF-NE-08.png" src="../_images/TInF-NE-08.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.10 </span><span class="caption-text">Pressure fluctuations vs. axial distance for the channel flow simulation with SEM</span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.10 </span><span class="caption-text">Pressure fluctuations vs. axial distance for the channel flow simulation with SEM</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id21">
 <span id="fig-tinf09ne"></span><img alt="../_images/TInF-NE-09.png" src="../_images/TInF-NE-09.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.11 </span><span class="caption-text">Pressure fluctuations vs. axial distance for the channel flow simulation with DFSEM</span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.11 </span><span class="caption-text">Pressure fluctuations vs. axial distance for the channel flow simulation with DFSEM</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id22">
 <span id="fig-tinf10ne"></span><img alt="../_images/TInF-NE-10.png" src="../_images/TInF-NE-10.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.12 </span><span class="caption-text">Pressure fluctuations vs. axial distance for the channel flow simulation with ATSM-R</span><a class="headerlink" href="#id22" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.12 </span><span class="caption-text">Pressure fluctuations vs. axial distance for the channel flow simulation with ATSM-R</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id23">
 <span id="fig-tinf11ne"></span><img alt="../_images/TInF-NE-11.png" src="../_images/TInF-NE-11.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.13 </span><span class="caption-text">Pressure fluctuations vs. axial distance for the channel flow simulation with ATSM-L</span><a class="headerlink" href="#id23" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.13 </span><span class="caption-text">Pressure fluctuations vs. axial distance for the channel flow simulation with ATSM-L</span><a class="headerlink" href="#id23" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>In <a class="reference internal" href="#fig-tinf12ne"><span class="std std-numref">Fig. 6.14</span></a> ~ <a class="reference internal" href="#fig-tinf15ne"><span class="std std-numref">Fig. 6.17</span></a>, the main components of the Reynolds stress tensor in the channel flow simulations with different synthetic methods are plotted against the axial distance to the inlet. Generally, all methods produce an initial decay in vortex intensity. The turbulence generated by the ATSM-L turns much faster into its equilibrium state than the others. It seems that it is more important to produce turbulence with valid length scales rather than with the exact magnitude of fluctuation velocity.</p>
 <figure class="align-center" id="id24">
 <span id="fig-tinf12ne"></span><img alt="../_images/TInF-NE-12.png" src="../_images/TInF-NE-12.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.14 </span><span class="caption-text">Main components of the Reynolds stress tensor at different sections in the channel flow simulation with DFM</span><a class="headerlink" href="#id24" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.14 </span><span class="caption-text">Main components of the Reynolds stress tensor at different sections in the channel flow simulation with DFM</span><a class="headerlink" href="#id24" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id25">
 <span id="fig-tinf13ne"></span><img alt="../_images/TInF-NE-13.png" src="../_images/TInF-NE-13.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.15 </span><span class="caption-text">Main components of the Reynolds stress tensor at different sections in the channel flow simulation with SEM</span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.15 </span><span class="caption-text">Main components of the Reynolds stress tensor at different sections in the channel flow simulation with SEM</span><a class="headerlink" href="#id25" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id26">
 <span id="fig-tinf14ne"></span><img alt="../_images/TInF-NE-14.png" src="../_images/TInF-NE-14.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.16 </span><span class="caption-text">Main components of the Reynolds stress tensor at different sections in the channel flow simulation with ATSM-R</span><a class="headerlink" href="#id26" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.16 </span><span class="caption-text">Main components of the Reynolds stress tensor at different sections in the channel flow simulation with ATSM-R</span><a class="headerlink" href="#id26" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id27">
 <span id="fig-tinf15ne"></span><img alt="../_images/TInF-NE-15.png" src="../_images/TInF-NE-15.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6.17 </span><span class="caption-text">Main components of the Reynolds stress tensor at different sections in the channel flow simulation with ATSM-L</span><a class="headerlink" href="#id27" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6.17 </span><span class="caption-text">Main components of the Reynolds stress tensor at different sections in the channel flow simulation with ATSM-L</span><a class="headerlink" href="#id27" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>

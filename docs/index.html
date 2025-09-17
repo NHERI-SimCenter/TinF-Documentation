@@ -1,24 +1,23 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en">
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Turbulence Inflow Tool &mdash; TInF Tool 0.2 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
-      <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=31b757c7" />
 
   
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=10f1778b"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
@@ -54,7 +53,7 @@
 <li class="toctree-l1"><a class="reference internal" href="userManual.html">4. User Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">5. TroubleShooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bugs.html">7. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="copyright.html">8. Copyright and License</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
@@ -94,8 +93,8 @@
            <div itemprop="articleBody">
              
   <section id="turbulence-inflow-tool">
-<span id="id1"></span><h1>Turbulence Inflow Tool<a class="headerlink" href="#turbulence-inflow-tool" title="Permalink to this heading"></a></h1>
-<p><strong>Jiawei Wan</strong> <a class="footnote-reference brackets" href="#id4" id="id2">1</a>, <strong>Peter Mackenzie-Helnwein</strong> <a class="footnote-reference brackets" href="#id5" id="id3">2</a></p>
+<span id="id1"></span><h1>Turbulence Inflow Tool<a class="headerlink" href="#turbulence-inflow-tool" title="Link to this heading"></a></h1>
+<p><strong>Jiawei Wan</strong> <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, <strong>Abiy Melaku</strong> <a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, <strong>Peter Mackenzie-Helnwein</strong> <a class="footnote-reference brackets" href="#id7" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p>
 <p>The Turbulence Inflow Tool (TInF) is designed to collect all required properties and parameters
 needed for various turbulence inflow models in OpenFOAM, and to augment an existing wind-around-a-building model by adding the necessary sections to respective parameter definition files.</p>
 <p>The generic workflow involved is as follows.</p>
@@ -107,10 +106,10 @@ Consult Chapter <a class="reference internal" href="userManual.html#sec-tinf-usa
 <ol class="arabic simple" start="3">
 <li><p>Run OpenFOAM using the updated model definition.</p></li>
 </ol>
-<p>This document covers the features and capabilities of Version ‘1.0.2’  of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0">Message Board</a>.</p>
+<p>This document covers the features and capabilities of Version ‘2.0.0’  of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the <a class="reference external" href="https://github.com/orgs/NHERI-SimCenter/discussions/categories/general-questions">Message Board</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The first open source release of <code class="docutils literal notranslate"><span class="pre">OpenFOAM</span></code> was in 2004. It was based on the <code class="docutils literal notranslate"><span class="pre">FOAM</span></code> code, which was originally developed by Henry Weller in 1989. As sometimes happens with open source software when commercial interests get involved, the code forked over time and a number of open source distributions from different entities are available. The two main distributions of the code come from the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a> and from <a class="reference external" href="https://openfoam.com">ESI OpenFOAM</a>. Currently Turbulence Inflow Tool compiles and runs with versions <strong>6</strong> and <strong>7</strong> of the code released by the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a>.</p>
+<p>The first open-source release of <code class="docutils literal notranslate"><span class="pre">OpenFOAM</span></code> was in 2004. It was based on the <code class="docutils literal notranslate"><span class="pre">FOAM</span></code> code, which was originally developed by Henry Weller in 1989. As sometimes happens with open source software when commercial interests get involved, the code forked over time and a number of open source distributions from different entities are available. The two main distributions of the code come from the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a> and from <a class="reference external" href="https://openfoam.com">ESI OpenFOAM</a>. Currently Turbulence Inflow Tool compiles and runs with versions <strong>6</strong> and <strong>7</strong> of the code released by the <a class="reference external" href="https://openfoam.org">OpenFOAM Foundation</a>.</p>
 </div>
 <div class="toctree-wrapper compound" id="lblusermanual">
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
@@ -121,7 +120,7 @@ Consult Chapter <a class="reference internal" href="userManual.html#sec-tinf-usa
 <li class="toctree-l1"><a class="reference internal" href="userManual.html">4. User Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">5. TroubleShooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples/examples.html">6. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bugs.html">7. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bugs.html">7. Bugs &amp; Feature Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="copyright.html">8. Copyright and License</a></li>
 </ul>
 </div>
@@ -141,16 +140,22 @@ Consult Chapter <a class="reference internal" href="userManual.html#sec-tinf-usa
 </ul>
 </div>
 <section id="contact">
-<h2>Contact<a class="headerlink" href="#contact" title="Permalink to this heading"></a></h2>
+<h2>Contact<a class="headerlink" href="#contact" title="Link to this heading"></a></h2>
 <p>Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna AT berkeley.edu</p>
-<dl class="footnote brackets">
-<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
-<dd><p>University of Notre Dame</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
-<dd><p>University of Washington</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>University of Notre Dame</p>
+</aside>
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>University California Berkeley</p>
+</aside>
+<aside class="footnote brackets" id="id7" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>University of Washington</p>
+</aside>
+</aside>
 </section>
 </section>
 
